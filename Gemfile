@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-gem 'bootstrap-sass', '2.3.2.0'
+# gem 'bootstrap-sass', '2.3.2.0'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -11,6 +11,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'sqlite3'
 
 gem 'mysql2'
+
+gem 'pg', '0.15.1'
+
+gem 'faker', '1.1.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -33,13 +37,23 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
+
+ group :doc do
+  #bundle exec rake doc:rails generates the API under doc/api.
+   gem 'sdoc', require: false
+ end
+ 
+ group :production do
+  # gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
 end
 
 group :development do
   gem 'rspec-rails', '2.13.1'
+  # gem 'rails-erd'
+  # gem 'railroady'
 end
 
 # Use ActiveModel has_secure_password

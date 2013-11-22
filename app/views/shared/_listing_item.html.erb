@@ -1,0 +1,9 @@
+<li id="<%= listing_item.id %>">
+  <span class="users">
+    <!-- <%= link_to listing_item.user.name, listing_item.user %> -->
+  </span>
+  <span class="content"><%= listing_item.content %></span>
+  <span class="timestamp">
+    Created <%= time_ago_in_words(listing_item.created_at) %> ago.
+  </span>
+</li>
