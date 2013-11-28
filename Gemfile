@@ -8,7 +8,7 @@ gem 'rails', '4.0.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 
 gem 'mysql2'
 
