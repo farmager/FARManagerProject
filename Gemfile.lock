@@ -30,7 +30,9 @@ GEM
     bcrypt-ruby (3.0.1-x86-mingw32)
     bootstrap-will_paginate (0.0.9)
       will_paginate
+    bootstrap_form (2.0.1)
     builder (3.1.4)
+    choice (0.1.6)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -43,6 +45,7 @@ GEM
     execjs (2.0.2)
     faker (1.1.2)
       i18n (~> 0.5)
+    fullcalendar-rails (1.6.4.0)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.2)
@@ -64,6 +67,7 @@ GEM
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
+    railroady (1.1.1)
     rails (4.0.0)
       actionmailer (= 4.0.0)
       actionpack (= 4.0.0)
@@ -72,6 +76,11 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.0.0)
       sprockets-rails (~> 2.0.0)
+    rails-erd (1.1.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      choice (~> 0.1.6)
+      ruby-graphviz (~> 1.0.4)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -96,6 +105,7 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
+    ruby-graphviz (1.0.9)
     sass (3.2.12)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -134,13 +144,17 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   bootstrap-will_paginate (= 0.0.9)
+  bootstrap_form
   coffee-rails (~> 4.0.0)
   faker (= 1.1.2)
+  fullcalendar-rails
   jbuilder (~> 1.2)
   jquery-rails
   mysql2
   pg (= 0.15.1)
+  railroady
   rails (= 4.0.0)
+  rails-erd
   rails_12factor (= 0.0.2)
   rspec-rails (= 2.13.1)
   sass-rails (~> 4.0.0)

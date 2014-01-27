@@ -1,0 +1,19 @@
+
+
+<div class="spacer"></div>
+
+<%= bootstrap_form_for(@inventory, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
+  <%= f.text_field :name, placeholder: "Enter inventory name.." %>
+  <%= f.text_field :capacity, placeholder: "Enter bin capacity.." %>
+  <%= f.select :commodity, wheat:"test"%>
+  <%= f.text_field :ticket_no, placeholder: "Enter grain ticket number.." %>
+  <%= f.text_field :moisture_content, placeholder: "Enter moisture content.." %>
+  <%= f.text_area :notes, placeholder: "Enter notes..." %>
+  
+  
+  <%= f.form_group do %>
+    <%= f.submit "Add Inventory",class: "btn btn-primary"%>
+  <% end %>
+  
+ 
+<% end %>

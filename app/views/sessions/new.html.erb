@@ -1,21 +1,25 @@
 
-<% provide(:title, "Sign in") %>
+ 
+ <div class="spacer"></div>
+ <% provide(:title, "Sign in") %>
 <h1 align="center">Sign in</h1>
 
-<div class="form-signin">
+<%= bootstrap_form_for(:session, url:sessions_path, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
+  <%= f.text_field :email, placeholder: "Enter your email..." %>
+  <%= f.password_field :password, placeholder: "Enter your password..." %>
 
-    <%= form_for(:session, url: sessions_path) do |f| %>
+   <%= f.form_group do %>
+    <%= f.check_box :remember_me %>
+  <% end %>
+  
+  
+  <%= f.form_group do %>
+    <%= f.submit "Sign In",class: "btn btn-primary"%>
+  <% end %>
+  
+ 
+<% end %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %><br/>
-
-      <%= f.label :password %>
-      <%= f.password_field :password%><br/>
-      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-    <% end %>
-    
-    </div>
-    
     <br/>
     <br/>
     <br/>
@@ -23,4 +27,3 @@
 <div class="alert alert-success" align="center">
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
 </div>
- 

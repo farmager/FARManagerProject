@@ -1,6 +1,16 @@
 class User < ActiveRecord::Base
+  has_many :inventories
+  has_many :inventories, dependent: :destroy
+  
+  has_many :equipment
+  has_many :equipment, dependent: :destroy
+  
   has_many :fields
   has_many :fields, dependent: :destroy
+  
+  has_many :expenses
+  has_many :expense, dependent: :destroy
+  
 
   before_create :create_remember_token
   before_save { self.email = email.downcase }

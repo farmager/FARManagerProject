@@ -1,0 +1,38 @@
+<div class="spacer"></div>
+
+
+<div class="row">
+
+
+<%=render 'shared/sidebar'%>
+
+<div class="col-md-9">
+	
+	<p class="text-right"><a class="btn btn-default btn-primary" href="/schedules/new" role="button">Add Event</a></p>
+	
+	
+	<div id='calendar'></div>
+
+
+<br/>
+
+
+
+</div>
+</div>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+    })
+
+});
+
+</script>
+

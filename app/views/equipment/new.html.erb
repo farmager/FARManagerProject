@@ -1,0 +1,19 @@
+<div class="spacer"></div>
+
+<%= bootstrap_form_for(@equipment, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
+  <%= f.text_field :name, placeholder: "Enter the equipment name..." %>
+  <%= f.text_field :category, placeholder: "Enter the type of equipment..." %>
+  <%= f.text_field :make, placeholder: "Enter the make..." %>
+  <%= f.text_field :model, placeholder: "Enter the model..." %>
+  <%= f.text_field :year, placeholder: "Enter the year..." %>
+  <%= f.text_field :value, placeholder: "Enter the value..." %>
+  <%= f.text_area :notes, placeholder: "Enter notes..." %>
+  
+  
+  
+  <%= f.form_group do %>
+    <%= f.submit "Add Equipment",class: "btn btn-primary"%>
+  <% end %>
+  
+ 
+<% end %>

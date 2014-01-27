@@ -1,10 +1,17 @@
 Farmagerproject::Application.routes.draw do
  
-  
-  # get "users/new"
   resources :users
+  resources :expenses
+  resources :equipment
   resources :sessions, only: [:new, :create, :destroy]
-  resources :fields, only: [:create, :destroy]
+  resources :fields
+  resources :inventories
+  resources :schedules
+  
+ 
+  # match '/inventory', to: 'inventory#index', via: 'get'
+  # match '/field', to: 'fields#index', via: 'get'
+  
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

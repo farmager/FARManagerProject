@@ -1,0 +1,13 @@
+<div class="spacer"></div>
+
+<%= bootstrap_form_for(@field, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
+  <%= f.text_field :content, placeholder: "Enter your field name..." %>
+
+  
+  
+  <%= f.form_group do %>
+    <%= f.submit "Add Fields",class: "btn btn-primary"%>
+  <% end %>
+  
+ 
+<% end %>

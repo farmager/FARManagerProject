@@ -1,0 +1,45 @@
+	<div class="spacer"></div>
+	
+	<div class="row">
+
+
+
+  	<%=render 'shared/sidebar'%>
+  	
+  	
+  	<div class="col-md-8">
+ <h4>
+		<b>Equipment: </b> <%= @inventory.name %>
+		<br/>
+			<br/>
+			<b>Make:</b> <%= @inventory.capacity %>
+			<br/>
+			
+			<br/>
+			<b>Model:</b> <%= @inventory.commodity %>
+			<br/>
+
+			<br/>
+			<b>Year:</b> <%= @inventory.ticket_no %>
+			<br/>
+			
+			<br/>
+			<b>Value:</b> <%= @inventory.moisture_content%>
+			<br/>
+			
+			<br/>
+			<b>Category:</b> <%= @inventory.notes%>
+			<br/>
+			
+			<br/>
+			<b>Last Update:</b> <%= @field.updated_at%>
+			<br/>
+		
+			</h4>
+
+
+
+  		</div>
+</div>
+	
+	
