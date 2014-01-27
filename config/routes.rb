@@ -1,4 +1,6 @@
 Farmagerproject::Application.routes.draw do
+  
+  root 'static_pages#home'
  
   resources :users
   resources :expenses
@@ -12,10 +14,11 @@ Farmagerproject::Application.routes.draw do
   # match '/inventory', to: 'inventory#index', via: 'get'
   # match '/field', to: 'fields#index', via: 'get'
   
-  root  'static_pages#home'
+  
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match '/home', to:"static_pages#home", via:'get'
   match '/faq',    to: 'static_pages#faq',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contactus', to: 'static_pages#contactus', via: 'get'
