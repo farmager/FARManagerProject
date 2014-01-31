@@ -35,7 +35,7 @@ class EquipmentController < ApplicationController
 
     def equipment_params
       params.require(:equipment).permit(:name, :notes, :make,
-                                   :model,:year,:value,:category)
+                                   :model,:year,:value,:category,:image)
     end
   
   

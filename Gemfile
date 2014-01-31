@@ -7,6 +7,8 @@ gem 'rails', '4.0.0'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+gem "paperclip", "~> 3.0"
+
 gem 'bootstrap_form'
 
 gem 'fullcalendar-rails'
@@ -14,7 +16,7 @@ gem 'fullcalendar-rails'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 
-gem 'mysql2'
+# gem 'mysql2'
 
 gem 'pg', '0.15.1'
 
@@ -54,11 +56,11 @@ gem 'bootstrap-will_paginate', '0.0.9'
   gem 'rails_12factor', '0.0.2'
 end
 
-group :development do
-  gem 'rspec-rails', '2.13.1'
-  gem 'rails-erd'
-  gem 'railroady'
-end
+# group :development do
+  # gem 'rspec-rails', '2.13.1'
+  # gem 'rails-erd'
+  # gem 'railroady'
+# end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

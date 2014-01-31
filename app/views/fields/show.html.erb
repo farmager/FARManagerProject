@@ -1,25 +1,26 @@
-	<div class="spacer"></div>
-	
-	<div class="row">
-  
+<div class="spacer"></div>
 
-  	<%=render 'shared/sidebar'%>
-  	
-  	
-  	<div class="col-md-8">
- <h4>
-		<b>Equipment: </b> <%= @field.content %>
+<div class="row">
+
+	<%= render 'shared/sidebar'%>
+
+	<div class="col-md-8">
+		<h4><b>Field Name: </b> <%= @field.content %>
 		<br/>
-	
-			
-			<br/>
-			<b>Last Update:</b> <%= @field.updated_at%>
-			<br/>
-			</h4>
+		<br/>
+		<b>Acreage</b> <%= @field.acres%>
+		<br/>
+		<br/>
+		<b>Notes</b> <%= @field.notes%>
+		<br/>
+		<br/>
+		<b>Land Status:</b> <%= @field.status%>
+		<br/>
+		<br/>
+		<b>Last Update:</b> <%= @field.updated_at%>
+		<br/>
+		</h4>
 
-
-
-  		</div>
+	</div>
 </div>
-	
-	
+

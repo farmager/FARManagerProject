@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127033434) do
+ActiveRecord::Schema.define(version: 20140131052524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20140127033434) do
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "equipment", ["user_id", "created_at"], name: "index_equipment_on_user_id_and_created_at", using: :btree
@@ -43,6 +47,10 @@ ActiveRecord::Schema.define(version: 20140127033434) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "acres"
+    t.integer  "status"
+    t.string   "notes"
+    t.integer  "total_acres"
   end
 
   add_index "fields", ["user_id", "created_at"], name: "index_fields_on_user_id_and_created_at", using: :btree

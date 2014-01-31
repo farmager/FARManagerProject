@@ -1,6 +1,6 @@
 <div class="spacer"></div>
 
-<%= bootstrap_form_for(@equipment, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
+<%= bootstrap_form_for(@equipment, style: :horizontal, left: "col-sm-4", right: "col-sm-4",  :html => { :multipart => true }) do |f| %>
   <%= f.text_field :name, placeholder: "Enter the equipment name..." %>
   <%= f.text_field :category, placeholder: "Enter the type of equipment..." %>
   <%= f.text_field :make, placeholder: "Enter the make..." %>
@@ -10,7 +10,8 @@
   <%= f.text_area :notes, placeholder: "Enter notes..." %>
   
   
-  
+   <%= f.file_field :image %>
+   
   <%= f.form_group do %>
     <%= f.submit "Add Equipment",class: "btn btn-primary"%>
   <% end %>

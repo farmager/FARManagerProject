@@ -51,7 +51,7 @@ def index
   end
   
     def create
-       @field = current_user.fields.build(equipment_params)
+       @field = current_user.fields.build(field_params)
     # @equipment = Equipment.new(equipment_params)
     if @field.save
       flash[:success] = "Equipment added successfully!"
@@ -63,8 +63,8 @@ def index
 
   private
 
-    def equipment_params
-      params.require(:field).permit(:content)
+    def field_params
+      params.require(:field).permit(:content,:status,:notes,:acres)
     end
   
 end

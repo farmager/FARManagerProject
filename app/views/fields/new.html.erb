@@ -1,13 +1,16 @@
 <div class="spacer"></div>
 
 <%= bootstrap_form_for(@field, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
-  <%= f.text_field :content, placeholder: "Enter your field name..." %>
+<%= f.text_field :content,label: "Name", placeholder: "Enter your field name..." %>
+<%= f.text_field :acres,placeholder: "Enter total field acreage..." %>
+<%= f.form_group :status, label: { text: "Own or Rent" } do %>
+<%= f.radio_button :status, 'Own', label: "Own", checked: true,inline: true %>
+<%= f.radio_button :status, 'Rent', label: "Rent",inline: true %>
+<% end %>
+<%= f.text_area :notes, placeholder: "Enter your notes..." %>
 
-  
-  
-  <%= f.form_group do %>
-    <%= f.submit "Add Fields",class: "btn btn-primary"%>
-  <% end %>
-  
- 
+<%= f.form_group do %>
+<%= f.submit "Add Fields",class: "btn btn-primary"%>
+<% end %>
+
 <% end %>
