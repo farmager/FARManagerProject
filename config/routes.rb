@@ -1,24 +1,31 @@
 Farmagerproject::Application.routes.draw do
   
+ 
    root 'static_pages#home'
  
   resources :users
   resources :expenses
   resources :equipment
   resources :sessions, only: [:new, :create, :destroy]
-  resources :fields
+  resources :fields do
+  collection do
+match 'search' => 'fields#index', :via => [:get, :post], :as => :search
+end
+end
+   match '/table',    to: 'fields#table',    via: 'get'
   resources :inventories
   resources :schedules
+  resources :crops
   
  
   # match '/inventory', to: 'inventory#index', via: 'get'
   # match '/field', to: 'fields#index', via: 'get'
   
-  
+
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
-  match '/home', to: 'static_pages#home', via: 'get'
+  # match '/home', to: 'static_pages#home', via: 'get'
   match '/faq',    to: 'static_pages#faq',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contactus', to: 'static_pages#contactus', via: 'get'

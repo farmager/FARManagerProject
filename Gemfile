@@ -4,6 +4,12 @@ ruby '1.9.3'
 gem 'rails', '4.0.0'
 
 # gem 'bootstrap-sass', '2.3.2.0'
+gem 'kaminari'
+gem 'ransack'
+
+gem 'chartkick'
+
+gem 'bootstrap-datepicker-rails'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 

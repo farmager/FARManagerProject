@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.handsontable.full
 //= require bootstrap
+//= require bootstrap-datepicker
 //= require fullcalendar
 //= require turbolinks
 //= require_tree .

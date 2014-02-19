@@ -1,7 +1,0 @@
-<%= form_for(@field) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="fields">
-    <%= f.text_area :content, placeholder: "Create new field..." %>
-  </div>
-  <%= f.submit "Create", class: "btn btn-large btn-primary" %>
-<% end %>

@@ -12,21 +12,12 @@
 			<br/>
 			<b>Last Log In : </b> <%= @user.updated_at%>
 			<br/><br/><br/>
-			<%= link_to "Reset Password", edit_user_path(current_user) %>
+			<%= link_to "Reset Password", edit_user_path(current_user), class:"btn btn-default btn-primary" %>
+		
 			</h4>
 
 
 
 
-<!-- <div class="row">
-  <div class="span8">
-    <% if @user.fields.any? %>
-      <h3>Fields (<%= @user.fields.count %>)</h3>
-      <ol class="fields">
-        <%= render @fields %>
-      </ol>
-       <%= will_paginate @fields %>
-    <% end %>
-  </div>
-</div> -->
+
 

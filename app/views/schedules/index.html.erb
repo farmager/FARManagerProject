@@ -1,38 +1,54 @@
 <div class="spacer"></div>
 
-
 <div class="row">
 
+	<%= render 'shared/sidebar'%>
 
-<%=render 'shared/sidebar'%>
+	<div class="col-md-9">
 
-<div class="col-md-9">
-	
-	<p class="text-right"><a class="btn btn-default btn-primary" href="/schedules/new" role="button">Add Event</a></p>
-	
-	
-	<div id='calendar'></div>
+		<p class="text-right">
+			<a class="btn btn-default btn-primary" href="/schedules/new" role="button">Add Event</a>
+		</p>
 
+		<div id='calendar'></div>
 
-<br/>
+		<br/>
 
-
-
-</div>
+	</div>
 </div>
 
+<script>
+		$(document).ready(function() {
 
-<script type="text/javascript">
+			var date = new Date();
+			var d = date.getDate();
+			var m = date.getMonth();
+			var y = date.getFullYear();
 
-$(document).ready(function() {
+			$('#calendar').fullCalendar({
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				editable: false,
+				    schedules: {
+						  url: '/schedules',
+						  type: 'GET',
+						  error: function() {
+						      alert('there was an error while fetching events!');
+						  },
+						  backgroundColor: 'blue',
+						  textColor: 'black'
+					}
+			});
 
-    // page is now ready, initialize the calendar...
+		});
+	</script>
 
-    $('#calendar').fullCalendar({
-        // put your options and callbacks here
-    })
 
-});
 
-</script>
+<div id='loading' style='display:none'>loading...</div>
+<div id='calendar'></div>
 
+ <!-- <%= link_to 'New Event', new_schedule_path %> -->

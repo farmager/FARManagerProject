@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140131052524) do
+ActiveRecord::Schema.define(version: 20140218230724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "crops", force: true do |t|
+    t.string   "crop_type"
+    t.string   "variety"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "herbicides"
+    t.string   "fungicides"
+    t.integer  "actual_seeded"
+    t.integer  "total_produced"
+    t.integer  "yield"
+    t.integer  "field_id"
+    t.integer  "grade"
+    t.integer  "nitrogen"
+    t.integer  "phosphorous"
+    t.integer  "potassium"
+    t.integer  "sulfur"
+    t.integer  "years"
+    t.date     "date_seeded"
+    t.integer  "fields_id"
+  end
+
+  add_index "crops", ["fields_id"], name: "index_crops_on_fields_id", using: :btree
 
   create_table "equipment", force: true do |t|
     t.string   "notes"
@@ -43,14 +66,25 @@ ActiveRecord::Schema.define(version: 20140131052524) do
   end
 
   create_table "fields", force: true do |t|
-    t.string   "content"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "acres"
-    t.integer  "status"
     t.string   "notes"
-    t.integer  "total_acres"
+    t.string   "land_location"
+    t.string   "land_name"
+    t.string   "crop_type"
+    t.string   "variety"
+    t.date     "seeding_date"
+    t.integer  "f_nitrogen"
+    t.integer  "f_phosphorous"
+    t.integer  "f_sulphur"
+    t.integer  "f_potassium"
+    t.string   "herbicides"
+    t.string   "fungicides"
+    t.integer  "seeded_acres"
+    t.integer  "netyield"
+    t.integer  "grade"
+    t.integer  "production"
   end
 
   add_index "fields", ["user_id", "created_at"], name: "index_fields_on_user_id_and_created_at", using: :btree
@@ -75,6 +109,8 @@ ActiveRecord::Schema.define(version: 20140131052524) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "start"
+    t.datetime "end"
   end
 
   create_table "users", force: true do |t|

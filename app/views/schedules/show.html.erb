@@ -1,2 +1,21 @@
-<h1>Schedules#show</h1>
-<p>Find me in app/views/schedules/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @schedule.description %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @schedule.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @schedule.end %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

@@ -3,23 +3,60 @@
 <div class="row">
 
 	<%= render 'shared/sidebar'%>
+  
 
 	<div class="col-md-8">
-		<h4><b>Field Name: </b> <%= @field.content %>
+		<h4><b>Field Name: </b> <%= @field.land_location %>
 		<br/>
 		<br/>
-		<b>Acreage</b> <%= @field.acres%>
+		<b>Acreage:</b> <%= @field.land_name%>
 		<br/>
 		<br/>
-		<b>Notes</b> <%= @field.notes%>
+		<b>Notes:</b> <%= @field.notes%>
 		<br/>
 		<br/>
-		<b>Land Status:</b> <%= @field.status%>
+		<b>Grain:</b> <%= @field.crop_type%>
+		<br/>
+		<br/>
+		<b>Variety:</b> <%= @field.variety%>
+		<br/>
+		<br/>
+		<b>Seeding Date:</b> <%= @field.seeding_date%>
+		<br/>
+		<br/>
+		<b>Nitrogen:</b> <%= @field.f_nitrogen%>
+		<br/>
+		<br/>
+		<b>Phosphorous:</b> <%= @field.f_phosphorous%>
+		<br/>
+		<br/>
+		<b>Sulphur:</b> <%= @field.f_sulphur%>
+		<br/>
+		<br/>
+		<b>Potassium:</b> <%= @field.f_potassium%>
+		<br/>
+		<br/>
+		<b>Herbicide:</b> <%= @field.herbicides%>
+		<br/>
+		<br/>
+		<b>Fungicide:</b> <%= @field.fungicides%>
+		<br/>
+		<br/>
+		<b>Net Yield:</b> <%= @field.netyield%>
+		<br/>
+		<br/>
+		<b>Grade:</b> <%= @field.grade%>
+		<br/>
+		<br/>
+		<b>Production:</b> <%= @field.production%>
 		<br/>
 		<br/>
 		<b>Last Update:</b> <%= @field.updated_at%>
 		<br/>
 		</h4>
+   
+
+
 
 	</div>
 </div>

@@ -5,11 +5,16 @@ class User < ActiveRecord::Base
   has_many :equipment
   has_many :equipment, dependent: :destroy
   
+  #additions
   has_many :fields
   has_many :fields, dependent: :destroy
   
+  has_many :crops, :through => :fields
+  
   has_many :expenses
   has_many :expense, dependent: :destroy
+  
+ 
   
 
   before_create :create_remember_token
