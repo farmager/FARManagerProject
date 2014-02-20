@@ -6,8 +6,18 @@
 	<div class="col-md-8">
 		<a class="btn btn-default btn-primary" href="/equipment/new" role="button">Add Equipment</a>
 
-		<h3>Recent Equipment Additions</h3>
+		<h3>Recent Equipment Additions</h3>	
 		
+
+		  <%= pluralize(current_user.equipment.count, "Equipment") %>
+		 <br/>
+		 <br/>
+		 <ul class="listing">
+		 <%= render @equipment %>
+		 </ul>
+		 <ul class="pagination">
+		 <%= will_paginate %>
+		 </ul>
 
 	</div>
 </div>

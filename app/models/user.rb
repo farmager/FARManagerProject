@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   has_many :fields
   has_many :fields, dependent: :destroy
   
-  has_many :crops, :through => :fields
+  has_many :observations
+  has_many :observations, dependent: :destroy
   
   has_many :expenses
   has_many :expense, dependent: :destroy

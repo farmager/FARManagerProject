@@ -1,0 +1,45 @@
+<div class="spacer"></div>
+
+<div class="row">
+
+	<%= render 'shared/sidebar'%>
+  
+
+	<div class="col-md-8">
+		<h4><b>Observation Type </b> <%= @observation.observation_type %>
+		<br/>
+		<br/>
+		<b>Crop Year</b> <%= @observation.year%>
+		<br/>
+		<br/>
+		<b>Legal Land Location</b> <%= @observation.landparcel%>
+		<br/>
+		<br/>
+		<b>Crop Affected</b> <%= @observation.cropobserved%>
+		<br/>
+		<br/>
+		<b>Severity</b> <%= @observation.severity%>
+		<br/>
+		<br/>
+		<b>Growth Stage</b> <%= @observation.growthstage%>
+		<br/>
+		<br/>
+
+			<b>Image:</b><%= image_tag @observation.image.url %>
+			<br/>
+			
+			<b>Notes</b> <%= @observation.notes%>
+		<br/>
+		<br/>
+			
+			<br/>
+			<b>Last Update:</b> <%= @observation.updated_at%>
+			<br/>
+		</h4>
+   
+
+
+
+	</div>
+</div>
+

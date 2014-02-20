@@ -1,68 +1,45 @@
 class InventoriesController < ApplicationController
 
-before_action :signed_in_user
-
-    # def create
-    # @inventory = current_user.inventories.build(inventory_params)
-    # if @inventory.save
-      # flash[:success] = "Inventory created successfully!"
-      # redirect_to :back
-    # else
-      # @inventory_items = []
-      # # render 'static_pages/home'
-    # end
-  # end
-# 
-  # def destroy
-  # end
-#   
-  # def new
-  # @inventory = Inventory.new
-  # render 'inventory'
-  # end
-#   
-  # def index
-#     
-  # @inventory  = current_user.inventories.build
-  # @inventory_items = current_user.listing.paginate(page: params[:page])
-# 
-# 
-#    
-  # end
-# 
-  # private
-# 
-    # def inventory_params   
-#       
-       # params.require(:inventory).permit(:name, :capacity, :commodity, :ticket_no, :notes, :moisture_content)
-    # end
-#     
-#     
-#     
-
-
-
-  
+  before_action :signed_in_user
   def index
-    
-  end  
-  
+    @search = current_user.inventories.search(search_params)
+    @search.sorts = 'name' if @search.sorts.empty?
+    @inventories = @search.result().page(params[:page])
+    @search.build_condition
+  end
+
   def new
-  @inventory=Inventory.new  
+    @inventory=Inventory.new
   end
-  
-  
+
   def destroy
-    
+    Inventory.find(params[:id]).destroy
+    flash[:success] = "Inventory deleted."
+    redirect_to inventories_url
+
   end
   
-   
+     def update
+    @inventory = Inventory.find(params[:id])
+    if @inventory.update_attributes(inventory_params)
+      flash[:success] = "Inventory updated."
+      redirect_to @inventory
+    else
+      render 'inventory'
+    end
+  end
+  
+
+  def edit
+    @inventory = Inventory.find(params[:id])
+  end
+
   def show
     @inventory = Inventory.find(params[:id])
   end
-  
-    def create
-       @inventory = current_user.inventories.build(inventory_params)
+
+  def create
+    @inventory = current_user.inventories.build(inventory_params)
     # @equipment = Equipment.new(equipment_params)
     if @inventory.save
       flash[:success] = "Inventory added successfully!"
@@ -74,10 +51,9 @@ before_action :signed_in_user
 
   private
 
-    def inventory_params
-      params.require(:inventory).permit(:name, :capacity, :commodity, :ticket_no, :notes, :moisture_content)
-    end
-  
-
+  def inventory_params
+       
+    params.require(:inventory).permit(:cropyear,:bin,:commodity_variety,:harvested_field,:status,:price,:name, :capacity, :commodity, :ticket_no, :notes, :moisture_content)
+  end
 
 end

@@ -1,61 +1,7 @@
-<%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :land_name_cont, "Name contains" %>
-    <%= f.text_field :land_name_cont %>
-  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
-<% end %>
-
-
-<table class="table table-striped table-bordered">
-    <thead>
-      <tr>
-        
-        <th><%=sort_link(@search, :land_location, "Land Location")%></th>
-        <th>Land Name</th>
-        <th>Grain</th>
-        <th>Variety</th>
-        <th>Seeding Date</th>
-        <th>Seeding Acres</th>
-        <th>Herbicide</th>
-        <th>Fungicide</th>
-        <th>Fertilizer- Nitrogen</th>
-        <th>Fertilizer- Phosphorous</th>
-        <th>Fertilizer- Potassium</th>
-        <th>Fertilizer- Sulphur</th>
-        <th>Net Yield</th>
-        <th>Grade</th>
-        <th>Production Amount</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <% @fields.each do |crop| %>
-        <tr>
-         
-          <td><%= crop.land_location %></td>
-            <td><%= crop.land_name %></td> 
-            <td><%= crop.crop_type %></td> 
-            <td><%= crop.variety %></td>
-            <td><%= crop.seeding_date %></td>
-            <td><%= crop.seeded_acres %></td>
-            <td><%= crop.herbicides %></td>
-            <td><%= crop.fungicides%></td>
-            <td><%= crop.f_nitrogen %></td>
-       		<td><%= crop.f_phosphorous %></td>
-       		<td><%= crop.f_potassium %></td>
-       		<td><%= crop.f_sulphur %></td>
-       		<td><%= crop.netyield %></td>
-       		<td><%= crop.grade %></td>
-       		<td><%= crop.production %></td>
-       
-    
-          
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="bigger_spacer"></div>
   
+  
+  <%= (collection_select :variety,:variety,current_user.fields.select(:crop_type).uniq, :crop_type, :crop_type)%>
 <div class="alert alert-info" align="center">
     <p><%= link_to "Back to Fields", fields_path %></p>
 </div>

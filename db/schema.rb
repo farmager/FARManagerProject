@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140218230724) do
+ActiveRecord::Schema.define(version: 20140220063515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,9 +99,32 @@ ActiveRecord::Schema.define(version: 20140218230724) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cropyear"
+    t.string   "bin"
+    t.string   "commodity_variety"
+    t.string   "harvested_field"
+    t.string   "status"
+    t.string   "price"
   end
 
   add_index "inventories", ["user_id", "created_at"], name: "index_inventories_on_user_id_and_created_at", using: :btree
+
+  create_table "observations", force: true do |t|
+    t.string   "observation_type"
+    t.integer  "year"
+    t.string   "landparcel"
+    t.string   "cropobserved"
+    t.string   "severity"
+    t.string   "growthstage"
+    t.string   "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "schedules", force: true do |t|
     t.integer  "user_id"

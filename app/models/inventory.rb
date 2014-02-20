@@ -6,8 +6,8 @@ class Inventory < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 20 }
   validates :capacity, presence: true, length: { maximum: 100000 }
   validates :commodity, presence: true
-  validates :ticket_no, presence: true, length: { maximum: 10 }  
-  validates :moisture_content, presence: true, length: { maximum: 3 }
-  validates :notes, presence: true, length: { maximum: 100 }
+  # validates :ticket_no, presence: true, length: { maximum: 10 }  
+  # validates :moisture_content, presence: true, length: { maximum: 3 }
+  # validates :notes, presence: true, length: { maximum: 100 }
         
 end
