@@ -9,13 +9,17 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
+  	 <% if signed_in? %> 
+  	 <%= render 'layouts/adminheader' %>
+  	 <%else%>
           <%= render 'layouts/header' %>
-    <div class="container">
+          <%end%>
+    <div class="container-fluid">
          <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
       <%= yield %>
-       <%= render 'layouts/footer' %>
+       <!-- <%= render 'layouts/footer' %> -->
        
     </div>
   </body>

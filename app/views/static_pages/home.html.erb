@@ -1,100 +1,251 @@
 <% if signed_in? %>
 
-<h2 style="padding-bottom:10px"></h2>
-<div class="row">
-	<!-- <div class="col-md-3">
-		<div class="list-group">
-			
-			<a href="inventories" class="list-group-item">Inventory</a>
-			<a href="fields" class="list-group-item">Field</a>
-			<a href="#" class="list-group-item active">Expenses</a>
-			<a href="#" class="list-group-item">Maintenance</a>
-			<a href="#" class="list-group-item">Scheduling</a>
-			
-		</div>
-	</div> -->
+ <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="/">Dashboard</a>
+                </li>
+                
+                <li><a href="fields">Fields</a>
+                </li>
+                <li><a href="inventories">Grain Inventory</a>
+                </li>
+                <li><a href="equipment">Equipment</a>
+                </li>
+                <li><a href="expenses">Expenses</a>
+                </li>
+                <li><a href="observations">Field Observations</a>
+                </li>
+                <li><a href="#">Crop Rotation</a>
+                </li>
+                <li><a href="#">Profit Planner</a>
+                </li>
+            </ul>
+        </div>
+
+            <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="content-header">
+               <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+                  <h3> <%= render 'shared/user_info' %></h3>
+                
+            </div>
+           
+            <div class="page-content inset">
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <p class="well">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="well">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="well">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.Three Column Example</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="well">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.Three Column Example</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="well">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.You get the idea! Do whatever you want in the page content area!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- Custom JavaScript for the Menu Toggle -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+    </script>
+
+
+
+
+
+<!-- <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul>
+        </div>
+        <div class="col-md-10 main">
+          <h1 class="page-header">Dashboard</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+          </div>
+   <h2 class="sub-header">Section title</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+                <tr>
+                  <td>1,004</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                </tr>
+                <tr>
+                  <td>1,005</td>
+                  <td>Nulla</td>
+                  <td>quis</td>
+                  <td>sem</td>
+                  <td>at</td>
+                </tr>
+                <tr>
+                  <td>1,006</td>
+                  <td>nibh</td>
+                  <td>elementum</td>
+                  <td>imperdiet</td>
+                  <td>Duis</td>
+                </tr>
+                <tr>
+                  <td>1,007</td>
+                  <td>sagittis</td>
+                  <td>ipsum</td>
+                  <td>Praesent</td>
+                  <td>mauris</td>
+                </tr>
+                <tr>
+                  <td>1,008</td>
+                  <td>Fusce</td>
+                  <td>nec</td>
+                  <td>tellus</td>
+                  <td>sed</td>
+                </tr>
+                <tr>
+                  <td>1,009</td>
+                  <td>augue</td>
+                  <td>semper</td>
+                  <td>porta</td>
+                  <td>Mauris</td>
+                </tr>
+                <tr>
+                  <td>1,010</td>
+                  <td>massa</td>
+                  <td>Vestibulum</td>
+                  <td>lacinia</td>
+                  <td>arcu</td>
+                </tr>
+                <tr>
+                  <td>1,011</td>
+                  <td>eget</td>
+                  <td>nulla</td>
+                  <td>Class</td>
+                  <td>aptent</td>
+                </tr>
+                <tr>
+                  <td>1,012</td>
+                  <td>taciti</td>
+                  <td>sociosqu</td>
+                  <td>ad</td>
+                  <td>litora</td>
+                </tr>
+                <tr>
+                  <td>1,013</td>
+                  <td>torquent</td>
+                  <td>per</td>
+                  <td>conubia</td>
+                  <td>nostra</td>
+                </tr>
+                <tr>
+                  <td>1,014</td>
+                  <td>per</td>
+                  <td>inceptos</td>
+                  <td>himenaeos</td>
+                  <td>Curabitur</td>
+                </tr>
+                <tr>
+                  <td>1,015</td>
+                  <td>sodales</td>
+                  <td>ligula</td>
+                  <td>in</td>
+                  <td>libero</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+	  
+	 -->
 	
-	<%=render 'shared/sidebar'%>
-	<div class="col-md-3">
-
-		<section>
-			<%= render 'shared/user_info' %>
-		</section>
-
-		<!-- <section> -->
-			<!-- <%= render 'shared/field_form' %> -->
-		<!-- </section> -->
-
-	</div>
-
-	<div class="col-md-3">
-
-		<aside>
-			<section>
-				<%= render 'shared/weather' %>
-			</section>
-
-		</aside>
-
-	</div>
-
-	<div class="col-md-3">
-
-		<aside>
-			<section>
-				<%= render 'shared/market' %>
-			</section>
-
-		</aside>
-
-	</div>
-
-	<div class="row">
-
-		<div class="col-md-4">
-			<h3>Field Listing</h3>
-			<%= render 'shared/listing' %>
-		</div>
-
-		<div class="col-md-4">
-			<h3>Recent Activity</h3>
-			<%= render 'shared/listing' %>
-
-		</div>
-
-		<div class="col-md-4">
-			<h3>Help</h3>
-			<%= render 'shared/help' %>
-
-		</div>
-
-		<div class="row">
-
-			<div class="col-md-9">
-				<h3>News</h3>
-				<ol class="fields">
-					<li>
-						<script type="text/javascript" src="http://www.24-7pressrelease.com/js/newsfeed.js"></script>
-						<script type="text/javascript" src="http://www.24-7pressrelease.com/js/js_press_releases.php?category_id=127&limit=5"></script>
-						<script type="text/javascript">
-							js_style = 1;
-							target = "_blank";
-							if (newsfeed) {
-								showNews(newsfeed, js_style);
-							} else {
-								document.write("News feeds did not import correctly. Please contact the 24-7 pressrelease administrators");
-							}
-						</script>
-					</li>
-
-				</ol>
-			</div>
-
-		</div>
-
-	</div>
-
-</div>
 
 <% else %>
 <div class="container">

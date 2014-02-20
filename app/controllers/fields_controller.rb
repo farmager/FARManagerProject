@@ -59,7 +59,7 @@ class FieldsController < ApplicationController
   private
 
     def field_params
-      params.require(:field).permit(:seeded_acres,:netyield,:grade,:production,:notes,:land_location,:land_name,:crop_type,:variety,:seeding_date,:f_nitrogen,:f_phosphorous,:f_sulphur,:f_potassium,:herbicides,:fungicides)
+      params.require(:field).permit(:year,:seeded_acres,:netyield,:grade,:production,:notes,:land_location,:land_name,:crop_type,:variety,:seeding_date,:f_nitrogen,:f_phosphorous,:f_sulphur,:f_potassium,:herbicides,:fungicides)
     end
   
 end

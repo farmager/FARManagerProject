@@ -53,6 +53,6 @@ before_action :signed_in_user
   def observation_params
   
        
-    params.require(:observation).permit(:observation_type,:year,:landparcel,:cropobserved,:severity,:growthstage,:notes,:image)
+    params.require(:observation).permit(:date_observed,:observation_type,:year,:landparcel,:cropobserved,:severity,:growthstage,:notes,:image)
   end
 end
