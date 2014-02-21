@@ -16,10 +16,12 @@
                     
                     <div class="col-md-12">
       <a class="btn btn-default btn-primary" href="/expenses/new" role="button">Add Expenses</a>
-      <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+      
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-	
-<%= pie_chart current_user.fields.group("land_location").count %>
+
+
+
+<p align="center">Field by Crop Type</p>
 
 <%= pie_chart current_user.fields.group("crop_type").count %>
                     </div>

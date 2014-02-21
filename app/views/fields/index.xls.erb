@@ -1,0 +1,50 @@
+<table border="1">
+						
+							<tr>
+
+								<th>Land Location</th>
+								<th>Land Name</th>
+								<th>Grain</th>
+								<th>Crop Year</th>
+								<th>Variety</th>
+								<th>Seeding Date</th>
+								<th>Seeding Acres</th>
+								<th>Herbicide</th>
+								<th>Fungicide</th>
+								<th>Fertilizer- Nitrogen</th>
+								<th>Fertilizer- Phosphorous</th>
+								<th>Fertilizer- Potassium</th>
+								<th>Fertilizer- Sulphur</th>
+								<th>Net Yield</th>
+								<th>Grade</th>
+								<th>Production Amount</th>
+								
+
+							</tr>
+
+						
+						
+							<% @fields.each do |field| %>
+							<tr>
+
+								<td><%= field.land_location %></td>
+								<td><%= field.land_name %></td>
+								<td><%= field.crop_type %></td>
+								<td><%= field.year %></td>
+								<td><%= field.variety %></td>
+								<td><%= field.seeding_date.strftime("%B %d, %Y") %></td>
+								<td><%= field.seeded_acres %></td>
+								<td><%= field.herbicides %></td>
+								<td><%= field.fungicides%></td>
+								<td><%= field.f_nitrogen %></td>
+								<td><%= field.f_phosphorous %></td>
+								<td><%= field.f_potassium %></td>
+								<td><%= field.f_sulphur %></td>
+								<td><%= field.netyield %></td>
+								<td><%= field.grade %></td>
+								<td><%= field.production %></td>
+								
+							</tr>
+							<% end %>
+						
+					</table>

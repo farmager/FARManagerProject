@@ -6,6 +6,10 @@ class FieldsController < ApplicationController
      @search = current_user.fields.search(params[:q])
     @fields = @search.result
     @fields = current_user.fields.paginate(page: params[:page])
+     respond_to do |format|
+      format.html
+      format.xls
+    end
   end
   def index
     
