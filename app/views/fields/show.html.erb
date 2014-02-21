@@ -1,12 +1,20 @@
-<div class="spacer"></div>
+ <div id="wrapper">
 
-<div class="row">
+  <%=render "shared/sidebar"%>
 
-	<%= render 'shared/sidebar'%>
-  
-
-	<div class="col-md-8">
-		<h4><b>Field Name: </b> <%= @field.land_location %>
+            <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="content-header">
+               <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+                  <h3> Field Information:</h3>
+                
+            </div>
+           
+            <div class="page-content inset">
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                       		<h4><b>Field Name: </b> <%= @field.land_location %>
 		<br/>
 		<br/>
 		<b>Acreage:</b> <%= @field.land_name%>
@@ -54,10 +62,12 @@
 		<b>Last Update:</b> <%= @field.updated_at%>
 		<br/>
 		</h4>
-   
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-
-	</div>
-</div>
 

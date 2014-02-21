@@ -1,8 +1,20 @@
-<div class="bigger_spacer"></div>
+<div id="wrapper">
 
+  <%=render "shared/sidebar"%>
 
-
-<%= bootstrap_form_for(@field, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
+            <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="content-header">
+               <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+                  <h3>Add A Field</h3>
+                
+            </div>
+           
+            <div class="page-content inset">
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                    	<%= bootstrap_form_for(@field, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
 <div class="panel-group" id="accordion">
 	  <div class="panel panel-default">
     <div class="panel-heading">
@@ -14,9 +26,11 @@
     </div>
     <div id="collapseOne" class="panel-collapse collapse in">
       <div class="panel-body">
-       <%= f.text_field :land_location, placeholder: "Enter the legal land location..." %>
+       <%= f.text_field :land_location,label: "Legal Land Location", placeholder: "Enter the legal land location..." %>
 
 <%= f.text_field :land_name, placeholder: "Enter land name or nickname..." %>
+
+<%= f.text_field :year, placeholder: "Enter the crop year..." %>
 
 <%= f.text_area :notes, placeholder: "Enter any notes" %>
 
@@ -34,7 +48,7 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body">
-       <%= f.text_field :crop_type, placeholder: "Enter the grain type" %>
+       <%= f.text_field :crop_type,label: "Grain", placeholder: "Enter the grain type" %>
 
 <%= f.text_field :variety, placeholder: "Enter grain variety..." %>
 
@@ -60,13 +74,13 @@
 
 <h4 align="center"><b>Enter fertilizer information</b></h4>
 
-<%= f.text_field :f_nitrogen, placeholder: "Enter nitrogen applied..." %>
+<%= f.text_field :f_nitrogen, label: "Nitrogen", placeholder: "Enter nitrogen applied..." %>
 
-<%= f.text_field :f_phosphorous, placeholder: "Enter phosphorous applied..." %>
+<%= f.text_field :f_phosphorous, label: "Phosphorous", placeholder: "Enter phosphorous applied..." %>
 
-<%= f.text_field :f_potassium, placeholder: "Enter potassium" %>
+<%= f.text_field :f_potassium,label: "Potassium", placeholder: "Enter potassium" %>
 
-<%= f.text_field :f_sulphur, placeholder: "Enter sulfur" %>
+<%= f.text_field :f_sulphur, label: "Sulphur", placeholder: "Enter sulfur" %>
       </div>
     </div>
   </div>
@@ -81,9 +95,9 @@
   
     <div id="collapseFour" class="panel-collapse collapse">
       <div class="panel-body">
-      	<%= f.text_field :production, placeholder: "Enter the total bushels..." %>
-<%= f.text_field :netyield, placeholder: "Enter your yield..." %>
-<%= f.text_field :grade, placeholder: "Enter the grain..." %>
+      	<%= f.text_field :production, label: "Production Amount", placeholder: "Enter the total bushels..." %>
+<%= f.text_field :netyield, label: "Net Yield/Acre", placeholder: "Enter your yield..." %>
+<%= f.text_field :grade, label: "Grade", placeholder: "Enter the grain..." %>
       	
       	
      
@@ -100,6 +114,19 @@
 <% end %>
 
 <% end %>
+
+
+
+                       
+                    </div>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
 

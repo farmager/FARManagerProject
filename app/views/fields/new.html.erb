@@ -1,8 +1,20 @@
-<div class="bigger_spacer"></div>
+<div id="wrapper">
 
+  <%=render "shared/sidebar"%>
 
-
-<%= bootstrap_form_for(@field, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
+            <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="content-header">
+               <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+                  <h3>Add A Field</h3>
+                
+            </div>
+           
+            <div class="page-content inset">
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                    	<%= bootstrap_form_for(@field, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
 <div class="panel-group" id="accordion">
 	  <div class="panel panel-default">
     <div class="panel-heading">
@@ -17,6 +29,8 @@
        <%= f.text_field :land_location,label: "Legal Land Location", placeholder: "Enter the legal land location..." %>
 
 <%= f.text_field :land_name, placeholder: "Enter land name or nickname..." %>
+
+<%= f.text_field :year, placeholder: "Enter the crop year..." %>
 
 <%= f.text_area :notes, placeholder: "Enter any notes" %>
 
@@ -100,6 +114,19 @@
 <% end %>
 
 <% end %>
+
+
+
+                       
+                    </div>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
 

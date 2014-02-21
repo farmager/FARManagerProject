@@ -1,10 +1,12 @@
 Farmagerproject::Application.routes.draw do
 
+
   root 'static_pages#home'
 
   resources :users
   resources :expenses
   resources :equipment
+   
   resources :sessions, only: [:new, :create, :destroy]
   resources :fields do
     collection do

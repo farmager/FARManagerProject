@@ -54,5 +54,4 @@ class EquipmentController < ApplicationController
                                    :model,:year,:value,:category,:image)
     end
   
-  
 end

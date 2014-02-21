@@ -1,5 +1,19 @@
-<div class="spacer"></div>
+<div id="wrapper">
 
+<%=render "shared/sidebar"%>
+
+	<!-- Page content -->
+	<div id="page-content-wrapper">
+		<div class="content-header">
+			<a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+			<h3>Edit Inventory Details</h3>
+
+		</div>
+
+		<div class="page-content inset">
+			<div class="row">
+
+				<div class="col-md-12">
 <%= bootstrap_form_for(@inventory, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
 <%= f.text_field :name, placeholder: "Enter inventory name.." %>
 <%= f.text_field :capacity, placeholder: "Enter bin capacity.." %>
@@ -23,7 +37,38 @@
 <%= f.text_area :notes, placeholder: "Enter notes..." %>
 
 <%= f.form_group do %>
-<%= f.submit "Add Inventory",class: "btn btn-primary"%>
+<%= f.submit "Edit Inventory",class: "btn btn-primary"%>
 <% end %>
 
 <% end %>
+					
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

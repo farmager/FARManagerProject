@@ -1,7 +1,22 @@
-<div class="spacer"></div>
+<div id="wrapper">
 
-<%= bootstrap_form_for(@observation, style: :horizontal, left: "col-sm-4", right: "col-sm-4",  :html => { :multipart => true }) do |f| %>
+  <%=render "shared/sidebar"%>
+
+            <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="content-header">
+               <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+                  <h3>Add a Field Observation</h3>
+                
+            </div>
+           
+            <div class="page-content inset">
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                   <%= bootstrap_form_for(@observation, style: :horizontal, left: "col-sm-4", right: "col-sm-4",  :html => { :multipart => true }) do |f| %>
   <%= f.text_field :observation_type, placeholder: "Hail,Frost,Bug,Disease..." %>
+  <%= f.date_select :date_observed, placeholder: "Enter the observed date..." %>
   <%= f.text_field :year, placeholder: "Enter the crop year..." %>
   <%= f.collection_select :landparcel,current_user.fields.select(:land_location).uniq, :land_location, :land_location,{:include_blank => "Please select land location."}%>
   <%= f.collection_select :cropobserved,current_user.fields.select(:crop_type).uniq, :crop_type, :crop_type, {:include_blank => "Please select the grain."}%>
@@ -18,3 +33,36 @@
   
  
 <% end %>
+	
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

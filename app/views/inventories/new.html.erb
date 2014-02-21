@@ -1,12 +1,26 @@
-<div class="spacer"></div>
+<div id="wrapper">
 
+<%=render "shared/sidebar"%>
+
+	<!-- Page content -->
+	<div id="page-content-wrapper">
+		<div class="content-header">
+			<a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+			<h3>Add Inventory </h3>
+
+		</div>
+
+		<div class="page-content inset">
+			<div class="row">
+
+				<div class="col-md-12">
 <%= bootstrap_form_for(@inventory, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
 <%= f.text_field :name, placeholder: "Enter inventory name.." %>
 <%= f.text_field :capacity, placeholder: "Enter bin capacity.." %>
 <%= f.collection_select :commodity,current_user.fields.select(:crop_type).uniq, :crop_type, :crop_type, {:include_blank => "Please select commodity."}%>
 <%= f.collection_select :commodity_variety,current_user.fields.select(:variety).uniq, :variety, :variety, {:include_blank => "Please select variety."}%>
 <%= f.collection_select :harvested_field,current_user.fields.select(:land_location).uniq, :land_location, :land_location, {:include_blank => "Please select land location."}%>
-<%= f.text_field :cropyear,label: "Crop Year",placeholder: "Enter year harvested..." %>
+
 <%= f.form_group :status, label: { text: "Status" } do %>
 <%= f.radio_button(:status, "Sold") %>
 <%= f.label(:status_status1, "Sold") %>
@@ -14,10 +28,9 @@
 <%= f.label(:status_status2, "Unsold") %>
 <% end %>
 
+<br/>
 
-
-<!-- bin not added -->
-
+<%= f.text_field :cropyear, label: "Crop Year", placeholder: "Enter year harvested..." %>
 <%= f.text_field :price, placeholder: "Enter price received..." %>
 <%= f.text_field :ticket_no, placeholder: "Enter grain ticket number.." %>
 <%= f.text_field :moisture_content, placeholder: "Enter moisture content.." %>
@@ -28,3 +41,34 @@
 <% end %>
 
 <% end %>
+					
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

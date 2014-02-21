@@ -1,13 +1,23 @@
-<div class="spacer"></div>
+<% provide(:title, 'Inventory') %>
 
-<!-- <div class="row"> -->
+<div id="wrapper">
 
-<!-- <div class="col-md-8"> -->
-<a class="btn btn-default btn-primary pull-right" href="/inventories/new" role="button">Add Grain Inventory</a>
+<%=render "shared/sidebar"%>
 
-<h3>Inventory</h3>
+	<!-- Page content -->
+	<div id="page-content-wrapper">
+		<div class="content-header">
+			<a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+			<h3>Inventory</h3>
 
-<%= search_form_for @search,:html => {:class => "form-inline"} do |f| %>
+		</div>
+
+		<div class="page-content inset">
+			<div class="row">
+
+				<div class="col-md-12">
+					<a class="btn btn-default btn-primary pull-right" href="/inventories/new" role="button">Add Inventory</a>
+				<%= search_form_for @search,:html => {:class => "form-inline"} do |f| %>
 <%= f.condition_fields do |c| %>
 <div class="input-medium search-field">
 	<%= c.attribute_fields do |a| %>
@@ -83,5 +93,19 @@
 	</tbody>
 </table>
 
-<!-- </div>
-</div> -->
+					
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+

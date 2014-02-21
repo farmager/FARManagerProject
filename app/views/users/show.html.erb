@@ -1,10 +1,23 @@
+ <% provide(:title, @user.name) %>
+ <div id="wrapper">
+
+  <%=render "shared/sidebar"%>
+
+            <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="content-header">
+               <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+                  <h3>User Profile</h3>
+                
+            </div>
+           
+            <div class="page-content inset">
+                <div class="row">
+                    
+                    <div class="col-md-12">
 
 
-<h3><b>User Profile</b></h3>
 
-<br/>
-
-<% provide(:title, @user.name) %>
 
 			<h4><b>User : </b> <%= @user.name %>
 			<br/>
@@ -15,6 +28,29 @@
 			<%= link_to "Reset Password", edit_user_path(current_user), class:"btn btn-default btn-primary" %>
 		
 			</h4>
+
+
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

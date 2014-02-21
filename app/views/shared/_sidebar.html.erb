@@ -1,17 +1,26 @@
-	<div class="col-md-3">
-		<div class="list-group">
-			
-			<!-- <li><%= link_to "HomePageTest",root_path %></li> -->
-			
-			
-			
-			<a href="/" class="list-group-item active">Dashboard</a>
-			<a href="fields" class="list-group-item">Fields</a>
-			<a href="inventories" class="list-group-item">Grain Inventory</a>
-			<a href="equipment" class="list-group-item">Equipment</a>
-			<!-- <a href="schedules" class="list-group-item">Scheduling</a> -->
-			<a href="expenses" class="list-group-item">Expenses</a>
-			<a href="observations" class="list-group-item">Field Observations</a>
-			
-		</div>
-	</div>
+      <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="/">Dashboard</a>
+                </li>
+                
+                <li>
+                	<%= link_to "Fields",fields_path %>
+                </li>
+                <li>
+                	<%= link_to "Inventory",inventories_path %>
+                </li>
+                <li>
+                	<%= link_to "Equipment",equipment_index_path %>
+                </li>
+                <li>
+                	<%= link_to "Expenses",expenses_path %>
+                </li>
+                <li><%= link_to "Observations",observations_path %></a>
+                </li>
+                <li><a href="#">Crop Rotation</a>
+                </li>
+                <li><a href="#">Profit Planner</a>
+                </li>
+            </ul>
+        </div>

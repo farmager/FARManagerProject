@@ -1,10 +1,22 @@
-<div class="spacer"></div>
+<% provide(:title, 'Observations') %>
 
-<h4><strong>Add your crop check results here for easy access for years!</strong></h4>
+<div id="wrapper">
 
-<div class="spacer"></div>
+  <%=render "shared/sidebar"%>
 
-<a class="btn btn-default btn-primary pull-right" href="/observations/new" role="button">Add Observations</a>
+            <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="content-header">
+               <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+                  <h3>Add a Field Observation</h3>
+                
+            </div>
+           
+            <div class="page-content inset">
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                        <a class="btn btn-default btn-primary pull-right" href="/observations/new" role="button">Add Observations</a>
 		
 		<%= search_form_for @search,:html => {:class => "form-inline"} do |f| %>
   <%= f.condition_fields do |c| %>
@@ -30,6 +42,7 @@
 				<tr>
 			
 					<th>Observation Type</th>
+					<th>Observed Date</th>
 					<th>Year</th>
 					<th>Land Parcel</th>
 					<th>Crop Observed</th>
@@ -47,6 +60,7 @@
 	
 
 					<td><%= observation.observation_type %></td>
+					<td><%= observation.date_observed %></td>
 					<td><%= observation.year %></td>
 					<td><%= observation.landparcel %></td>
 					<td><%= observation.cropobserved %></td>
@@ -72,5 +86,25 @@
 		</table>
 		
 	
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
