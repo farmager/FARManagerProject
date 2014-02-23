@@ -13,14 +13,13 @@ Farmagerproject::Application.routes.draw do
       match 'search' => 'fields#index', :via => [:get, :post], :as => :search
     end
   end
-  match '/table',    to: 'fields#table',    via: 'get'
+  match '/graphs',    to: 'fields#graphs',    via: 'get'
   resources :inventories
   resources :schedules
   resources :crops
   resources :observations
 
-  # match '/inventory', to: 'inventory#index', via: 'get'
-  # match '/field', to: 'fields#index', via: 'get'
+
 
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
