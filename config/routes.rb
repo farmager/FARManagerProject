@@ -13,7 +13,7 @@ Farmagerproject::Application.routes.draw do
       match 'search' => 'fields#index', :via => [:get, :post], :as => :search
     end
   end
-  match '/table',    to: 'fields#table',    via: 'get'
+  match '/graphs',    to: 'fields#graphs',    via: 'get'
   resources :inventories
   resources :schedules
   resources :crops
