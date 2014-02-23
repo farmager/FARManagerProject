@@ -1,0 +1,108 @@
+<div class="bigger_spacer"></div>
+
+
+<%= bootstrap_form_for(@crop, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
+
+
+ 
+ 
+ <!-- <%= f.date_select :date_seeded, 'data-behaviour' => 'datepicker' %> -->
+ <!-- <%= f.text_field :date_seeded, 'data-behaviour' => 'datepicker' %> -->
+
+<!-- <%= f.collection_select :field_id, current_user.fields.all, :id, :content, :prompt => "Select a Field"%> -->
+
+
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          <b>Enter seeding details.</b>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+       <%= f.text_field :crop_type, placeholder: "Enter the grain type" %>
+
+<%= f.text_field :variety, placeholder: "Enter grain variety..." %>
+
+<%= f.text_field :actual_seeded, placeholder: "Enter the actual seeded acres..." %>
+
+ <%= f.date_select :date_seeded, placeholder: "Enter the seeded date..." %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          <b>Enter chemicals applied.</b>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+<%= f.text_field :herbicides, placeholder: "Enter herbicides..." %>
+
+<%= f.text_field :fungicides, placeholder: "Enter fungicides..." %>
+
+<h4 align="center"><b>Enter fertilizer information</b></h4>
+
+<%= f.text_field :nitrogen, placeholder: "Enter nitrogen applied..." %>
+
+<%= f.text_field :phosphorous, placeholder: "Enter phosphorous applied..." %>
+
+<%= f.text_field :potassium, placeholder: "Enter potassium" %>
+
+<%= f.text_field :sulfur, placeholder: "Enter sulfur" %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+         <b>Enter harvest details.</b>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+      	<%= f.text_field :total_produced, placeholder: "Enter the total bushels..." %>
+<%= f.text_field :yield, placeholder: "Enter your yield..." %>
+<%= f.text_field :grade, placeholder: "Enter the grain..." %>
+      	
+      	
+     
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+
+<%= f.form_group do %>
+<%= f.submit "Add Crops",class: "btn btn-primary"%>
+<% end %>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('[data-behaviour~=datepicker]').datepicker();
+    dateFormat: "yy-mm-dd"
+  })
+</script>
+

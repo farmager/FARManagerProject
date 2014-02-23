@@ -1,81 +1,40 @@
-<!DOCTYPE html>
-<html debug="true">
-<head>
-    <title>Calx with autocalculate : false</title>
-    <script type="text/javascript" src="http://prototype.xsanisty.com/calx/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="http://prototype.xsanisty.com/calx/jquery-calx-1.1.4.min.js"></script>
-        <script type="text/javascript">
-	$(document).ready(function(){
-	    $('#calx').calx({
-		autocalculate: true
-	    });
-	    
-	    $('#calculate').click(function(){
-		$('#calx').calx('update');
-	    });
-	});
-    </script>
-    <style>
-	input[type="text"]{
-	    width:100%;
-	}
-	td{
-	    padding:5px 10px;
-	}
-    </style>
-</head>
-<body>
-    <form id="calx">
-	<table class="">
-	    <thead>
-		<tr>
-			<td></td>
-		    <td>Spring Wheat</td>
-		    <td>Spring Wheat</td>
-		    
-		   
-		</tr>
-	    </thead>
-	    <tbody>
-	    	<!-- <TR>
 
-<TH>Row 1 header</TH>
+ <div id="wrapper">
 
-<TD>C1R1</TD>
+  <%=render "shared/sidebar"%>
 
-<TD>C1R2</TD>
+            <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="content-header">
+               <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+                  <h3>Expenses</h3>
+                
+            </div>
+           
+            <div class="page-content inset">
+                <div class="row">
+                    
+                    <div class="col-md-12">
+   
+      
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+    </div>
 
-</TR> -->
-	    	
-		<tr>
-		   <th>Estimated Yield</th> <td><input id="estimatedyield" type="text" name="estimatedyield[]" value="36.2" data-format=" 0,0[.]00"/></td>
-		   <td>blargh</td>
-		    </tr>
-		    <tr>
-		    <th>Estimated Market Price</th><td><input id="estimatedmarketprice" type="text" name="estmarketprice[]" value="5.75" data-format="$ 0,0[.]00"/></td>
-		    </tr>
-		    <tr>
-		    <th>Estimated Gross Revenue</th><td><input id="estimatedrev" type="text" name="estimated[]" value="" data-format="$ 0,0[.]00" data-formula="($estimatedyield*$estimatedmarketprice)" /></td>
-		    </tr>
-		    <tr>
-		    <th>Variable Expenses</th>
-		    </tr>
-		    <tr>
-		    <th>Seed</th><td><input id="item1" type="text" name="item[]" value="" /></td>
-		    </tr>
-		    <tr>
-		    <th>Fertilizer-Nitrogen</th><td><input id="item1" type="text" name="item[]" value="" /></td>
-		    </tr>
-		    <tr>
-		    <td><input id="calculate" type="button" value="Calculate" /></td>
-		    </tr>
-		    
-		
-	    </tbody>
-	</table>
-    </form>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

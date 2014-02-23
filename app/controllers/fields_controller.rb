@@ -2,21 +2,21 @@ class FieldsController < ApplicationController
   before_action :signed_in_user
   before_action :clear_search_index, :only => [:index]
 
-  def graphs
+  def table
+     @search = current_user.fields.search(params[:q])
+    @fields = @search.result
     @fields = current_user.fields.paginate(page: params[:page])
+     respond_to do |format|
+      format.html
+      format.xls
+    end
   end
-  
-  
   def index
     
     @search = current_user.fields.search(search_params)    
     @search.sorts = 'land_location' if @search.sorts.empty?
     @fields = @search.result().page(params[:page])
     @search.build_condition
-    respond_to do |format|
-      format.html
-      format.xls
-    end
     
   end  
   

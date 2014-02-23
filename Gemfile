@@ -43,8 +43,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+<<<<<<< HEAD
 #gem 'multi_json'
 
+=======
+>>>>>>> parent of 3cc97cd... Changes for deployment
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
@@ -65,9 +68,9 @@ gem 'bootstrap-will_paginate', '0.0.9'
 end
 
 # group :development do
-  #gem 'rspec-rails', '2.13.1'
+  # gem 'rspec-rails', '2.13.1'
   # gem 'rails-erd'
-  #gem 'railroady'
+  # gem 'railroady'
 # end
 
 # Use ActiveModel has_secure_password
