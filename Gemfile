@@ -44,7 +44,11 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #gem 'multi_json'
+=======
+gem 'multi_json'
+>>>>>>> parent of 03a4161... Fix heroku errors
 
 =======
 >>>>>>> parent of 3cc97cd... Changes for deployment
