@@ -1,0 +1,5 @@
+<% if @croprotation.present? && flash[:error].blank? %>
+  $('#croprotation_table').find('tr[data-id="#{params[:id]}"]').html('#{escape_javascript(render 'croprotation_table_row', croprotation: @croprotation)}')
+<% end %>
+$('.flash_message').html('#{escape_javascript(render 'flash_message')}');
+$('.alert').delay(5000).fadeOut("slow", function () { $(this).remove();})

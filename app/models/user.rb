@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   has_many :expenses
   has_many :expense, dependent: :destroy
   
+  has_many :profitplanners
+  has_many :profitplanners, dependent: :destroy
  
   
 

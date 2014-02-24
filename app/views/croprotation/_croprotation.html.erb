@@ -1,0 +1,56 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+    	
+      <th>Land Location</th>
+      <th>Planned Crop Year 1</th>
+      <th>Year 1</th>
+      <th>Planned Crop Year 2</th>
+      <th>Year 2</th>
+      <th>Planned Crop Year 3</th>
+      <th>Year 3</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @croprotations.present? %>
+      <% @croprotations.each do |croprotation| %>
+        <tr data-id="<%= croprotation.id %>">
+          <%= render 'croprotation_table_row', croprotation: croprotation %>
+        </tr>
+      <% end %>
+    <% end %>
+    <tr class="hide">
+      <%= form_for :croprotation,url: croprotation_index_path,remote: true, html: {id: 'create_croprotation_form'} do |f| %>
+        <td>
+        	
+          <%= f.text_field :land_location, class: 'input-small' %>
+        </td>
+        <td>
+          <%= f.text_field :planned_crop_year1, class: 'input-small' %>
+        </td>
+        <td>
+          <%= f.text_field :year1, class: 'input-small' %>
+        </td>
+        <td>
+          <%= f.text_field :planned_crop_year2, class: 'input-small' %>
+        </td>
+        <td>
+          <%= f.text_field :year2, class: 'input-small' %>
+        </td>
+        <td>
+          <%= f.text_field :planned_crop_year3, class: 'input-small' %>
+        </td>
+        <td>
+          <%= f.text_field :year3, class: 'input-small' %>
+        </td>
+        <td>
+          <%= f.submit 'Save', class: 'btn' %>
+          <span></span>
+          <%= link_to 'Cancel', 'javascript:void(0)', class: 'btn cancel_btn' %>
+        </td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+<%= link_to 'New Crop Rotation', 'javascript:void(0)', class: 'btn create-btn' %>

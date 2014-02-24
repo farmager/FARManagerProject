@@ -1,6 +1,7 @@
 Farmagerproject::Application.routes.draw do
 
 
+
   root 'static_pages#home'
 
   resources :users
@@ -18,6 +19,8 @@ Farmagerproject::Application.routes.draw do
   resources :schedules
   resources :crops
   resources :observations
+  resources :profitplanner
+  resources :croprotation
 
 
 

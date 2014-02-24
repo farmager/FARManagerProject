@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220212154) do
+ActiveRecord::Schema.define(version: 20140223232531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "croprotations", force: true do |t|
+    t.integer  "user_id"
+    t.string   "land_location"
+    t.string   "planned_crop_year1"
+    t.string   "year1"
+    t.string   "planned_crop_year2"
+    t.string   "year2"
+    t.string   "planned_crop_year3"
+    t.string   "year3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "equipment", force: true do |t|
     t.string   "notes"
@@ -103,6 +116,13 @@ ActiveRecord::Schema.define(version: 20140220212154) do
     t.datetime "image_updated_at"
     t.integer  "user_id"
     t.date     "date_observed"
+  end
+
+  create_table "profitplanners", force: true do |t|
+    t.integer  "user_id"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
