@@ -32,7 +32,7 @@
 
 <%= f.text_field :year, placeholder: "Enter the crop year..." %>
 
-<%= f.text_area :notes, placeholder: "Enter any notes" %>
+<%= f.text_area :notes, placeholder: "Enter any notes..." %>
 
 
       </div>
@@ -54,7 +54,7 @@
 
 <%= f.text_field :seeded_acres, placeholder: "Enter the actual seeded acres..." %>
 
- <%= f.date_select :seeding_date, placeholder: "Enter the seeded date..." %>
+ <%= f.date_select :seeding_date,include_blank:true, start_year: 2000, end_year: 2014, placeholder: "Enter the seeded date..." %>
       </div>
     </div>
   </div>

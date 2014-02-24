@@ -11,6 +11,10 @@ class FieldsController < ApplicationController
       format.xls
     end
   end
+  
+  def graph
+     @fields = current_user.fields.paginate(page: params[:page])
+  end
   def index
     
     @search = current_user.fields.search(search_params)    
