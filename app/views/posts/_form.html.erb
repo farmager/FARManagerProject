@@ -1,0 +1,64 @@
+<div id="forumwrapper">
+
+	<!-- Page content -->
+	<div id="page-content-wrapper">
+
+		<div class="page-content inset">
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<div class="bigger_spacer"></div>
+
+				<div class="module">
+  <div class="module_header"><%= action_name.humanize %> Post</div>
+    <div class="module_subheader smaller"></div>
+    <div class="module_body">
+      <%= bootstrap_form_for [@topic, @post] do |f| %>
+      <% if @post.errors.any? %>
+        <% flash[:warning] = @post.errors.full_messages.join(', and ') %>
+      <% end %>
+      <div class="fieldset">
+        
+       
+       
+        <%= f.text_area :body, :cols => 60, :rows => 15 %>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="module_footer">
+      <div class="fieldset">
+   <%= f.submit "Submit Post" %> 
+        <div class="clear"></div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

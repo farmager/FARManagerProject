@@ -1,0 +1,29 @@
+<div class="bigger_spacer"></div>
+<div id="forumwrapper">
+<div class="module">
+  <div class="module_header"><%= action_name.humanize %> Forum Category</div>
+    
+    <div class="module_body">
+      <%= bootstrap_form_for(@category,style: :horizontal) do |f| %>
+      <% if @category.errors.any? %>
+        <% flash[:warning] = @category.errors.full_messages.join(', and ') %>
+      <% end %>
+      <div class="fieldset">
+       
+      
+        <%= f.text_field :title %>
+        <div class="clear"></div>
+      </div>
+
+    </div>
+    <div class="module_footer">
+      <div class="fieldset">
+        <%= f.submit "Submit Forum Category" %>
+        <div class="clear"></div>
+      </div>
+     
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>

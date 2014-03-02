@@ -1,43 +1,25 @@
-<h3>Crop Rotations</h3>
-<div id="croprotation_table">
-  <%= render 'croprotation' %>
-</div>
 
-<script type="text/javascript">
-$(document).ready(function() {
-  $('body').on('click', '.create_btn', function() {
-    return $('#create_croprotation_form').closest('tr').show();
-  });
-  $('body').on('click', '.cancel_btn', function() {
-    return $('#create_croprotation_form').closest('tr').hide();
-  });
-  $('body').on('click', '.edit_btn', function() {
-    $(this).closest('tr').children('td:not(:last)').each(function() {
-      var cell_value;
-      cell_value = $.trim($(this).text());
-      $(this).html("<input class='input-small' type='text' size='30'></input>");
-      return $(this).children('input').val(cell_value);
-    });
-    $(this).removeClass('edit_btn');
-    $(this).addClass('save_btn');
-    return $(this).text('Save');
-  });
-  return $('body').on('click', '.save_btn', function() {
-    var id, params_hash;
-    id = $(this).closest("tr").attr('data-id');
-    params_hash = "id=" + id + "&";
-    $(this).closest('tr').children('td:not(:last)').each(function() {
-      var cell_value, index, key;
-      cell_value = $.trim($(this).children("input").val());
-      index = $(this).closest("tr").children("td").index($(this)) + 1;
-      key = $("#croprotation_table table").find("th:nth-child(" + index + ")").text().toLowerCase();
-      return params_hash += "croprotation[" + key + "]=" + cell_value + "&";
-    });
-    return $.ajax({
-      type: 'PUT',
-      url: '/croprotation/' + id,
-      data: params_hash
-    });
-  });
-});
-</script>
+<html>
+    <head>
+        <title>Javascript Conditionals</title>
+    </head>
+    <body>
+ 
+    
+    
+    <h1>This is an if statement</h1>
+    <script>
+    x = 5;
+    if(x > 2){
+        alert(+x+'  is greater');
+    }
+    </script>
+  <br />
+  <br />
+ 
+ 
+ 
+
+ 
+</body>
+</html>

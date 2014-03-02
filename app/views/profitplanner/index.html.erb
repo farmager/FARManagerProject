@@ -15,22 +15,29 @@
  	    });
  	});
      </script>
+     
      <style>
-    
- 	input[type="text"]{
- 	    width:100%;
- 	}
- 	td{
- 	    padding:5px 10px;
- 	}
+     table{width:50%}
+     table td { padding:.4em; border:1px solid #ffffff; border-bottom:0px; vertical-align:top; background:#fff; }
+     
+     table th { font-weight:normal; padding:.6em; font-size:1.0em; }
+
+table td:first-child { border-left:0px; }
+table td:last-child { border-right:0px; }
+     
+     
+     
      </style>
+     
+     
+
  </head>
  
  <h1 align="center">Profit Planner</h1>
  
  <body>
      <form id="calx">
- 	<table class="">
+ 	<table class="profit">
  	    <thead>
  		<tr>
  			<td></td>
@@ -41,15 +48,7 @@
  		</tr>
  	    </thead>
  	    <tbody>
- 	    	<!-- <TR>
- 
- <TH>Row 1 header</TH>
- 
- <TD>C1R1</TD>
- 
- <TD>C1R2</TD>
- 
- </TR> -->
+
  	    	 <th><i>Estimate Return Per Acre</i></th>
  		<tr>
  		   <th>Estimated Yield</th> <td><input id="estimatedyield" type="text" name="estimatedyield[]" value="39.00" data-format=" 0,0[.]00"/></td>

@@ -1,0 +1,35 @@
+<div class="bigger_spacer"></div>
+
+<div id="forumwrapper">
+<%= bootstrap_form_for [@forum, @topic] do |f| %>
+<% if @topic.errors.any? %>
+  <% flash[:warning] = @topic.errors.full_messages.join(', and ') %>
+<% end %>
+<div class="module">
+  <div class="module_header"><%= action_name.humanize %> Topic</div>
+    <div class="module_subheader smaller"></div>
+    <div class="module_body">
+      <div class="fieldset">
+       
+      
+       <%= f.text_field :title, :size => 60 %>
+        <div class="clear"></div>
+      </div>
+      <% unless @topic.id %>
+      <div class="fieldset">
+       
+       <%= f.text_area :body, :cols => 60, :rows => 15 %>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <% end %>
+    <div class="module_footer">
+      <div class="fieldset">
+        <%= f.submit "Submit Topic" %> 
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>

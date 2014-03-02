@@ -7,6 +7,13 @@ gem 'rails', '4.0.0'
 gem 'kaminari'
 gem 'ransack'
 
+
+gem 'rails_autolink'
+
+gem 'forum_monster', :github => "codezomb/forum_monster", :branch => "strong-parameters"
+
+
+
 gem 'chartkick'
 
 gem 'bootstrap-datepicker-rails'

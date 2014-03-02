@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/codezomb/forum_monster.git
+  revision: f1a8fd37f0d785687740491137875c96105a7de6
+  branch: strong-parameters
+  specs:
+    forum_monster (1.0.4)
+      rails (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -27,6 +35,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     atomic (1.1.14)
+    bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     bootstrap-datepicker-rails (1.3.0.1)
       railties (>= 3.0)
@@ -92,6 +101,8 @@ GEM
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_autolink (1.1.5)
+      rails (> 3.1)
     rails_serve_static_assets (0.0.2)
     rails_stdout_logging (0.0.3)
     railties (4.0.0)
@@ -149,6 +160,7 @@ DEPENDENCIES
   chartkick
   coffee-rails (~> 4.0.0)
   faker (= 1.1.2)
+  forum_monster!
   fullcalendar-rails
   jbuilder (~> 1.2)
   jquery-rails
@@ -158,6 +170,7 @@ DEPENDENCIES
   pg (= 0.15.1)
   rails (= 4.0.0)
   rails_12factor (= 0.0.2)
+  rails_autolink
   ransack
   sass-rails (~> 4.0.0)
   sdoc
