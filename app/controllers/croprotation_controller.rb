@@ -6,7 +6,9 @@ class CroprotationController < ApplicationController
   end
 
   def index
-    @croprotations = Croprotation.all
+    # @croprotations = Croprotation.all
+    @fields=Field.all
+   
   end
 
   def create

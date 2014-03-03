@@ -1,6 +1,6 @@
 class Field < ActiveRecord::Base
-  scope :land, where(:crop_type => "Canola")
-  scope :peas, where(:crop_type => "Field Peas")
+  scope :thirteen, where(:year => "2013")
+  
   
   
   
