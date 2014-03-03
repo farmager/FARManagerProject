@@ -1,2 +1,97 @@
-<h1>Profitplanner#new</h1>
-<p>Find me in app/views/profitplanner/new.html.erb</p>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  
+  
+  <div id="loan-amount"> How much <strong>cash</strong> do you want? <a href="#" class="sliderNav minus-loan"><img src="img/minus.png" width="26" height="26" /></a>
+    <div class="loan-amount-slider"></div>
+    <a href="#" class="sliderNav add-loan"><img src="img/plus.png" width="26" height="26" /></a>
+    <input class="loan-amount-value" type="text" />
+  </div>
+  <div id="days"> How <strong>long</strong> do you want it for? <a href="#" class="sliderNav minus-day" style="padding-left: 14px;"><img src="img/minus.png" width="26" height="26" /></a>
+    <div class="days-slider"></div>
+    <a href="#" class="sliderNav add-day"><img src="img/plus.png" width="26" height="26" /></a>
+    <input id="days-value" type="text" />
+  </div>
+  <div id="summary">Borrowing<strong>
+    <input type="text" class="loan-amount-value" />
+    </strong>+ Interest & Fees
+    <input type="text" id="interest-fees" />
+    = Total to repay:
+    <input id="total-repay"/>
+    <img src="img/norton.jpg" class="norton" width="80" height="43" alt="Norton" />
+    <button type="submit" value="Submit">Get Money Now <img src="img/arrows.png" width="14" height="15" /></button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+ <script type="text/javascript">
+//loan amount slider
+$(function() {
+
+    var inputValue = $(".loan-amount-value").val();
+
+    $(".loan-amount-slider").slider({
+        min: 100,
+        max: 500,
+        step: 1,
+        value: 200,
+        slide: function(event, ui) {
+            //update loan amount value when sliding loan amount slider 
+            $(".loan-amount-value").val(ui.value);
+        }
+    });
+    //show the loan amount initially
+    $(".loan-amount-value").val($(".loan-amount-slider").slider("value"));
+    //when the loan amount changes via user input.. 
+    $("#loan-amount-value").change(function(event) {
+        //change the slider to that amount    
+        $(".loan-amount-slider").slider("option", "value", inputValue);
+    })
+
+
+    //day slider
+    var dayInputValue = $("#days-value").val();
+
+    $(".days-slider").slider({
+        min: 1,
+        max: 45,
+        step: 1,
+        slide: function(event, ui) {
+
+            //update daye when sliding day slider 
+            $("#days-value").val(ui.value);
+            $(function() {
+                calculate();
+            });
+        }
+
+    });
+    //show the day initially
+    $("#days-value").val($(".days-slider").slider("value"));
+
+    //when the day via user input.. 
+    $("#days-value").change(function(event) {
+        //change the slider to that amount    
+        $(".days-slider").slider("option", "value", dayInputValue);
+    });
+
+    function calculate() {
+        var days = $("#days-value").val();
+        var amount = $(".loan-amount-value").val();
+        var percent = .10;
+        var interest = (days * amount * percent) / 10;
+        var total = parseInt(amount, 10) + parseInt(interest, 10);
+
+        $("#total-repay").val(total);
+        $("#interest-fees").val(interest);
+    };
+
+});
+</script>

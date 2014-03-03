@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140302002836) do
+ActiveRecord::Schema.define(version: 20140303043615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,30 @@ ActiveRecord::Schema.define(version: 20140302002836) do
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "notes"
+    t.float    "pulse"
+    t.float    "cereals"
+    t.float    "canola"
+    t.float    "flax"
+    t.float    "fertilizer"
+    t.float    "chemicals"
+    t.float    "insurancepremium"
+    t.float    "machinery_fuel"
+    t.float    "electricity"
+    t.float    "trucking"
+    t.float    "heating_fuel"
+    t.float    "machinery_repairs"
+    t.float    "building_repairs"
+    t.float    "machinery_rent"
+    t.float    "interest"
+    t.float    "subscription_costs"
+    t.float    "office_expenses"
+    t.float    "accounting_legalfees"
+    t.float    "property_taxes"
+    t.float    "rents"
+    t.float    "vehicle_expenses"
+    t.float    "hardware_costs"
+    t.float    "telephone"
   end
 
   create_table "fields", force: true do |t|

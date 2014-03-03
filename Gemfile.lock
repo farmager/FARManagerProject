@@ -60,6 +60,8 @@ GEM
     faker (1.1.2)
       i18n (~> 0.5)
     fullcalendar-rails (1.6.4.0)
+    groupdate (1.0.4)
+      activerecord (>= 3.0.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -162,6 +164,7 @@ DEPENDENCIES
   faker (= 1.1.2)
   forum_monster!
   fullcalendar-rails
+  groupdate
   jbuilder (~> 1.2)
   jquery-rails
   kaminari

@@ -12,7 +12,7 @@ gem 'rails_autolink'
 
 gem 'forum_monster', :github => "codezomb/forum_monster", :branch => "strong-parameters"
 
-
+gem 'groupdate'
 
 gem 'chartkick'
 

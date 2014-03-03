@@ -1,4 +1,4 @@
-
+<% provide(:title, 'Expenses') %>
  <div id="wrapper">
 
   <%=render "shared/sidebar"%>
@@ -7,7 +7,7 @@
         <div id="page-content-wrapper">
             <div class="content-header">
                <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-                  <h3>Expenses</h3>
+                  <h3>Add Expenses</h3>
                 
             </div>
            
@@ -15,6 +15,95 @@
                 <div class="row">
                     
                     <div class="col-md-12">
+                    	
+                    	
+                    	
+    <%= bootstrap_form_for(@expense, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
+<div class="panel-group" id="accordion">
+	  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          <b>Enter Income Details.</b>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+       
+    <%= f.text_field :year, label: "Tax Year", placeholder: "Enter the tax year..." %>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          <b>Enter seeding details.</b>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+      
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          <b>Enter chemicals applied.</b>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+         <b>Enter harvest details.</b>
+        </a>
+      </h4>
+    </div>
+  
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+      	
+     
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+
+<%= f.form_group do %>
+<%= f.submit "Add Expenses",class: "btn btn-primary"%>
+<% end %>
+
+<% end %>
+
+                    	
+                    	
+                    	
+                    	
+                    	
+                    	
+                    	
+                    	
+                    	
+                    	
+                    	
+                    	
    
       
                     </div>
