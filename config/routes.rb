@@ -3,6 +3,7 @@ Farmagerproject::Application.routes.draw do
 
 
 
+  
   root 'static_pages#home'
 
   resources :users
@@ -25,6 +26,7 @@ Farmagerproject::Application.routes.draw do
 
 
 
+  match '/weather', to: 'weather#index', via:'get'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'

@@ -1,5 +1,0 @@
-<% if @croprotations.present? %>
-  $('#croprotation_table').html("#{escape_javascript(render 'croprotation')}")
-<% end %>
-$('.flash_message').html('#{escape_javascript(render 'flash_message')}');
-$('.alert').delay(5000).fadeOut("slow", function () { $(this).remove();})

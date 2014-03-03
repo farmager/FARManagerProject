@@ -1,6 +1,15 @@
 class Field < ActiveRecord::Base
+  scope :land, where(:crop_type => "Canola")
+  scope :peas, where(:crop_type => "Field Peas")
+  
+  
+  
   belongs_to :user
   
+  
+  def queries
+    @fields=Field.find_by_sql "select avg(netyield) from fields where crop_type='Canola'"
+  end
   
   
   

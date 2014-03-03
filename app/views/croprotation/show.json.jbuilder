@@ -1,1 +1,0 @@
-json.extract! @croprotation, :id, :land_location, :planned_crop_year1, :year1,:planned_crop_year2, :year2,:planned_crop_year3, :year3, :created_at, :updated_at

@@ -1,52 +1,73 @@
-<% provide(:title, 'Field Graphs') %>
+<% provide(:title, 'Field Graphs and Analytics') %>
 <div id="wrapper">
 
 	<%= render "shared/sidebar"%>
-	<!-- Page content -->
-	<div id="page-content-wrapper">
-		<div class="content-header">
-			<a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-			<h3>Field Graphs</h3>
 
-		</div>
+	<div id="page-content-wrapper">
 
 		<div class="page-content inset">
 			<div class="row">
 
 				<div class="col-md-12">
 
-					<p align="center">
-						Pie Chart by Grain Type
-					</p>
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#charts" data-toggle="tab">Charts</a>
+						</li>
+						<li>
+							<a href="#graphs" data-toggle="tab">Graphs</a>
+						</li>
+						<li>
+							<a href="#analytics" data-toggle="tab">Analytics</a>
+						</li>
 
-					<%= pie_chart current_user.fields.group("crop_type").count %>
-				</div>
-				</div>
-				
-				
-				
+					</ul>
 
-				<div class="row">
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane fade in active" id="charts">
 
-					<div class="col-md-12">
 
-						<p align="center">
-							Seeded Acres by Field
-						</p>
+						<br/><br/>
+							<p align="center">
 
-						<%= column_chart current_user.fields.group("land_location").sum(:seeded_acres) %>
+								<b>Pie Chart by Grain Type</b>
+							</p>
+
+							<%= pie_chart current_user.fields.group("crop_type").count %>
+					
+
 					</div>
+					
+							<div class="tab-pane fade" id="graphs">
+
+							graphs
+					
+
 					</div>
-					
+					<div class="tab-pane fade" id="analytics">
+						<br/><br/><br/>
+						<div class="col-md-1"></div>
+						<div class="col-md-9" style="font-size:1.2em">
+						<p class="well">
+							<b>Average Yields</b> <br/><br/>
+						<b>Canola: </b><%= current_user.fields.where(crop_type:'Canola').average(:netyield) %> bushels/acre <br/>
+						<b>Field Peas: </b><%= current_user.fields.where(crop_type:'Field Peas').average(:netyield) %> bushels/acre <br/>
+						<b>Wheat- Hard Red Spring: </b><%= current_user.fields.where(crop_type:'Wheat- Hard Red Spring').average(:netyield) %> bushels/acre <br/>
+						<b>Flax: </b><%= current_user.fields.where(crop_type:'Flax').average(:netyield) %> bushels/acre <br/>
+						
+						<b>Maximum Canola Yield: </b><%= current_user.fields.limit(1).maximum(:netyield,:conditions=>"crop_type = 'Canola'",:group=>:land_location) %>
 					
 					
 				
+						
+				</p>
 
-					
+				</div>
+				<div class="col-md-2"></div>
+				</div>
 
-					
-
-				
 			</div>
 		</div>
 	</div>
+
