@@ -2,14 +2,14 @@ class Field < ActiveRecord::Base
   scope :thirteen, where(:year => "2013")
   
   
-  
+   def self.uniq_by_landlocation
+    all.uniq_by(&:land_location)
+  end
   
   belongs_to :user
   
   
-  def queries
-    @fields=Field.find_by_sql "select avg(netyield) from fields where crop_type='Canola'"
-  end
+  
   
   
   

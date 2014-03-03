@@ -2,12 +2,16 @@ class CroprotationController < ApplicationController
 
   before_filter :clear_flash
   
+ 
+  
+  
+  
   def show
   end
 
   def index
     # @croprotations = Croprotation.all
-    @fields=Field.all
+    @fields=Field.uniq_by_landlocation
    
   end
 
