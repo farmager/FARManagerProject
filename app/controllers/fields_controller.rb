@@ -26,10 +26,23 @@ class FieldsController < ApplicationController
     @fields = @search.result().page(params[:page])
     @search.build_condition
     
+    
+  
   end  
+  
+  
+ 
   
   def new
   @field=Field.new  
+  
+   
+    @test = current_user.fields.all
+    respond_to do |format|  
+        format.html
+      format.json { render :json => @test  }  
+    end  
+  
   end
   
   def edit

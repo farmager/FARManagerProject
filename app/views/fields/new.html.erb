@@ -126,7 +126,43 @@
     </div>
 
 
+<script type="text/javascript">
+
+$(function () {  
+  $('#field_land_location').tokenInput('/fields/new.json', { 
+  	crossDomain: false,
+  	hintText: "Enter land location...",
+  	searchDelay: 200,
+  	propertyToSearch: "land_location", 
+  	tokenValue:"land_location",
+allowFreeTagging: true,
+ minChars: 1,
+tokenLimit: 1,
+ allowCustomEntry: true,
+ preventDuplicates: true
+  	});  
+}); 
+
+</script>
 
 
+<script type="text/javascript">
+
+$(function () {  
+  $('#field_crop_type').tokenInput('/fields/new.json', { 
+  	crossDomain: false,
+  	hintText: "Enter crop type...",
+  	searchDelay: 200,
+  	propertyToSearch: "crop_type", 
+  	tokenValue:"crop_type",
+allowFreeTagging: true,
+ minChars: 1,
+tokenLimit: 1,
+ allowCustomEntry: true,
+ preventDuplicates: true
+  	});  
+}); 
+
+</script>
 
 

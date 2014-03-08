@@ -16,7 +16,7 @@
 //= require jquery_ujs
 //= require jquery.handsontable.full
 //= require bootstrap
-
+//= require jquery.tokeninput
 //= require turbolinks
 //= require_tree .
 
