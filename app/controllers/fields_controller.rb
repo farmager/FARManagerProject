@@ -1,4 +1,5 @@
 class FieldsController < ApplicationController
+ 
   before_action :signed_in_user
   before_action :clear_search_index, :only => [:index]
 
@@ -9,6 +10,9 @@ class FieldsController < ApplicationController
      respond_to do |format|
       format.html
       format.xls
+      format.csv do
+    render_csv("fields-#{Time.now.strftime("%Y%m%d")}")
+  end
     end
   end
   
@@ -31,6 +35,7 @@ class FieldsController < ApplicationController
   def edit
      @field = Field.find(params[:id])
   end
+  
   
    def update
     @field = Field.find(params[:id])
@@ -69,5 +74,8 @@ class FieldsController < ApplicationController
     def field_params
       params.require(:field).permit(:year,:seeded_acres,:netyield,:grade,:production,:notes,:land_location,:land_name,:crop_type,:variety,:seeding_date,:f_nitrogen,:f_phosphorous,:f_sulphur,:f_potassium,:herbicides,:fungicides)
     end
+  
+
+  
   
 end

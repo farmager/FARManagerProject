@@ -1,0 +1,7 @@
+Land Location, Crop Type, Year, Variety, Seeded Acres, Nitrogen, Phosphorous, Potassium, Sulpur, Net Yield
+<%= CSV.generate do |csv|
+  current_user.fields.each do |field|
+    csv << [ field[:land_location], field[:crop_type],field[:year],field[:variety],field[:seeded_acres],field[:f_nitrogen],field[:f_phosphorous],field[:f_potassium],field[:sulphur],field[:netyield]]
+  end
+end .html_safe %>
+

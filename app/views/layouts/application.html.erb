@@ -16,7 +16,7 @@
           <%end%>
     <div class="container-fluid">
          <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+        <%= content_tag(:div, value, id: "flash", class: "alert alert-#{key}") %>
       <% end %>
       <%= yield %>
        <!-- <%= render 'layouts/footer' %> -->
@@ -24,3 +24,13 @@
     </div>
   </body>
 </html>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#flash').remove();
+  }, 5000);
+ })
+</script>
