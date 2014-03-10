@@ -11,7 +11,7 @@ class CroprotationController < ApplicationController
 
   def index
     # @croprotations = Croprotation.all
-     @fields=Field.uniq_by_landlocation
+     @fields=current_user.fields.where(year:'2013')
     # @fields=current_user.fields.uniq {|p| p.land_location p.crop_type}
    
   end
