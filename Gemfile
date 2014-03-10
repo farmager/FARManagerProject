@@ -7,6 +7,7 @@ gem 'rails', '4.0.0'
 gem 'kaminari'
 gem 'ransack'
 
+gem 'gmaps4rails'
 
 gem 'rails_autolink'
 

@@ -16,6 +16,11 @@
 //= require jquery_ujs
 //= require jquery.handsontable.full
 //= require bootstrap
+//= require highcharts
+//= require exporting
+//= require underscore
+//= require gmaps/google
+//= require jquery-calx-1.1.4.min
 //= require jquery.tokeninput
 //= require turbolinks
 //= require_tree .

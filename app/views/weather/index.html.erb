@@ -23,11 +23,12 @@
 				<% if current_user.id==12 %>
 				
 					<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+					<div id="2013" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 					<% else %>
 					Not Eugene
 					<%end%>
 					
-					<%=render "shared/weather"%>
+					<!-- <%=render "shared/weather"%> -->
 				</div>
 
 			</div>
@@ -86,6 +87,59 @@
 });
    
     </script>
+    
+    <script type="text/javascript">
+	$(document).ready(function(){
+    $('#2013').highcharts({
+        title: {
+            text: 'Average Monthly Temperature and Rainfall'',
+            x: -20 //center
+        },
+         subtitle: {
+                text: 'Cymric Area: April 1-November 1',
+                x: -20
+            },
+             credits: {
+            enabled: false
+        },
+        
+
+        xAxis: {
+                        title: {
+                text: 'Months'
+            },
+            categories: ['April', 'May', 'June', 'July', 'August', 'September',
+                'October']
+        },
+        yAxis: {
+            title: {
+                text: 'Precipitation Totals (mm)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: 'mm'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Precipitation',
+            data: [239.2, 539.7, 253.3, 266.3, 431.7, 340.2, 196.1, 389.7, 426.6, 652.5, 231.4, 234.6, 272]
+
+        }]
+    });
+});
+   
+    </script>
+
 
 
 

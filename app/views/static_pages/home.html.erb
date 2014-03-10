@@ -13,24 +13,79 @@
             </div>
            
             <div class="page-content inset">
-                <div class="row">
+                <div class="row" style="font-size:1.0em">
                     
                     <div class="col-md-6">
-                        <p class="well">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                        <p class="well"> 
+                        	<b>Recent Fields</b>
+                        	<br/>
+                        	 <% @fields.each do |field| %>
+                        	<br/>
+                        	<b>Land Location:   </b> <%= link_to field.land_location, field %>
+                        	<br/>
+                        	<b>Grain:   </b> <%=field.crop_type%>
+                        	<br/>
+     						<b>Seeded Acres:   </b> <%=field.seeded_acres%>
+     					    <br/>
+                        	<%end%>
+                        	</p>
                     </div>
+                 
                     <div class="col-md-6">
-                        <p class="well">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                        <p class="well">
+                        	<b><%= link_to "Recent Forum Posts", forums_root_path %></b><br />
+                        	
+                        	<% @posts.each do |post| %>
+                        	<br/>
+                        	<i><%= post.user.name %>
+                        	
+                        	<%=post.created_at.strftime("on %m/%d/%Y at %I:%M%p :")%></i>
+                        	<br/>
+     						<b><%=post.body%></b>
+     						<br/>
+                        	<%end%>
+    		
+                        </p>
                     </div>
-                    <div class="col-md-4">
+                  
+                    <!-- <div class="col-md-6">
                         <p class="well">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.Three Column Example</p>
-                    </div>
-                    <div class="col-md-4">
+                    </div> -->
+                    <!-- <div class="col-md-6">
                         <p class="well">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.Three Column Example</p>
+                    </div> -->
+                    <!-- <div class="col-md-4">
+                        <p class="well"></p>
                     </div>
                     <div class="col-md-4">
-                        <p class="well">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.You get the idea! Do whatever you want in the page content area!</p>
+                        <p class="well"></p>
                     </div>
+                      <div class="col-md-4">
+                        <p class="well"></p>
+                    </div> -->
                 </div>
+            </div>
+            <div class="row">
+            	<div class="col-md-4">
+                        <p class="well"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="well"></p>
+                    </div>
+                      <div class="col-md-4">
+                        <p class="well">
+                        	
+                        	
+                        	
+                        	
+                        	
+                        	
+                        	
+                        	
+                        	
+                        </p>
+                    </div>
+            	
             </div>
         </div>
     </div>

@@ -42,8 +42,7 @@
 							</p>
 							<%= pie_chart current_user.fields.group("variety").count %>
 							
-													<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
+												
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 					
@@ -64,7 +63,7 @@
 							<b>Average Yields</b> <br/><br/>
 						<b>Canola: </b><%= current_user.fields.where(crop_type:'Canola').average(:netyield) %> bushels/acre <br/>
 						<b>Field Peas: </b><%= current_user.fields.where(crop_type:'Field Peas').average(:netyield) %> bushels/acre <br/>
-						<b>Wheat- Hard Red Spring: </b><%= current_user.fields.where(crop_type:'Wheat- Hard Red Spring').average(:netyield) %> bushels/acre <br/>
+						<b>Wheat- Hard Red Spring: </b><%= current_user.fields.where(crop_type:'Wheat Hard Red Spring').average(:netyield) %> bushels/acre <br/>
 						<b>Flax: </b><%= current_user.fields.where(crop_type:'Flax').average(:netyield) %> bushels/acre <br/>
 						
 						<b>Maximum Canola Yield: </b><%= current_user.fields.limit(1).maximum(:netyield,:conditions=>"crop_type = 'Canola'",:group=>:land_location) %>
