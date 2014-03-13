@@ -105,6 +105,74 @@
 
 					</table>
 
+
+
+
+		<!-- <table class="table table-striped table-bordered table-condensed table-hover">
+						<thead>
+							<tr>
+
+								<th><b>Land Location</b></th>
+								<th>2010</th>
+								<th>2011</th>
+								<th>2012</th>
+								
+								
+							</tr>
+
+						</thead>
+
+						<tbody>
+							<% @allfields.each do |field| %>
+							<tr>
+								<td><%= field.land_location%></td>
+
+								<%if field.year==2010%>
+								<td><%= field.crop_type%></td>
+								<%else%>
+								<td><i>No Record</i></td>
+								<%end%>
+
+								<%if field.year==2011%>
+								<td><%= field.crop_type%></td>
+								<%else%>
+								<td><i>No Record</i></td>
+								<%end%>
+
+								<%if field.year==2012%>
+								<td><%= field.crop_type%></td>
+								<%else%>
+								<td><i>No Record</i></td>
+								<%end%>
+
+								<%if field.year==2013%>
+								<td><%= field.crop_type%></td>
+								<%else%>
+								<td><i>No Record</i></td>
+								<%end%>
+
+							
+								
+						
+								
+
+							</tr>
+							<%end%>
+							
+							
+
+						</tbody>
+
+					</table> -->
+
+
+
+
+
+
+
+
+
 				</div>
 			</div>
 		</div>

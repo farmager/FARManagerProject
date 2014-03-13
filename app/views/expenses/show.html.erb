@@ -1,41 +1,91 @@
+<% provide(:title, 'Calculated Values') %>
+<div id="wrapper">
 
- <div id="wrapper">
+	<%= render "shared/sidebar"%>
 
-  <%=render "shared/sidebar"%>
+	<div id="page-content-wrapper">
+		<!-- <div class="content-header">
+			<a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+			<h3 align="center"></h3>
+			
 
-            <!-- Page content -->
-        <div id="page-content-wrapper">
-            <div class="content-header">
-               <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-                  <h3>Expenses</h3>
-                
-            </div>
-           
-            <div class="page-content inset">
-                <div class="row">
-                    
-                    <div class="col-md-12">
+		</div> -->
+
+		<div class="page-content inset">
+			<div class="row">
+
+				<div class="col-md-12" align="center">
+						<div class="alert alert-danger" align="center">
+    <p>This program is for demonstration purposes only and results may depend on your unique farming operations- please consult an expert in the preparation of your financial matters. This program does not work for incorporated farming businesses!</p>
+</div>
+					<h3><b><u> For Tax Year <%= @expense.year%> </u></b></h3> <br/>
+						<h4>
+						<b>Total Pulse Income: <%= number_to_currency(@expense.pulse)%></b><br/><br/>
+					<b>Total Cereal Income: <%= number_to_currency(@expense.cereals)%></b><br/><br/>
+					<b>Total Canola Income: <%= number_to_currency(@expense.canola)%></b><br/><br/>
+					<b>Total Flax Income: <%= number_to_currency(@expense.flax)%> </b><br/>
+					<hr>
+					
+					
+					<p class="text-danger"><b>Total Gross Income: <%= number_to_currency(@expense.update_income)%></b></p>
+				
+					
+					
+					
+					<hr>
+					
+
    
-      
-                    </div>
-              
-                </div>
-            </div>
-        </div>
-    </div>
+					
+					
+					
+					
+						<b>Fertilizer: <%= number_to_currency(@expense.fertilizer)%></b><br/><br/>
+					<b>Chemicals: <%= number_to_currency(@expense.chemicals)%></b><br/><br/>
+					<b>Insurance Premium: <%= number_to_currency(@expense.insurancepremium)%></b><br/><br/>
+					<b>Machinery Fuel: <%= number_to_currency(@expense.machinery_fuel)%> </b><br/><br/>
+					
+					<b>Electricity: <%= number_to_currency(@expense.electricity)%></b><br/><br/>
+					<b>Trucking: <%= number_to_currency(@expense.trucking)%></b><br/><br/>
+					<b>Heating Fuel: <%= number_to_currency(@expense.heating_fuel)%></b><br/><br/>
+					<b>Machinery Repairs: <%= number_to_currency(@expense.machinery_repairs)%> </b><br/><br/>
+					
+					<b>Building Repairs: <%= number_to_currency(@expense.building_repairs)%></b><br/><br/>
+					<b>Machinery Rent: <%= number_to_currency(@expense.machinery_rent)%></b><br/><br/>
+					<b>Interest: <%= number_to_currency(@expense.interest)%></b><br/><br/>
+					<b>Subscription Costs: <%= number_to_currency(@expense.subscription_costs)%> </b><br/><br/>
+					
+					<b>Office Expenses: <%= number_to_currency(@expense.office_expenses)%></b><br/><br/>
+					<b>Accounting or Legal Fees: <%= number_to_currency(@expense.accounting_legalfees)%></b><br/><br/>
+					<b>Property Taxes: <%= number_to_currency(@expense.property_taxes)%></b><br/><br/>
+					<b>Rents: <%= number_to_currency(@expense.rents)%> </b><br/><br/>
+					
+					<b>Vehicle Expenses: <%= number_to_currency(@expense.vehicle_expenses)%></b><br/><br/>
+					<b>Hardware Costs: <%= number_to_currency(@expense.hardware_costs)%></b><br/><br/>
+					<b>Telephone: <%= number_to_currency(@expense.telephone)%> </b><br/>
+					
+					<hr>
+					<p class="text-danger"><b>Total Expenses: <%= number_to_currency(@expense.update_expenses)%></b></p>
+					
+					
+					<hr>
+					
+					<p class="text-danger"><b><%= number_to_currency(@expense.update_income)%> - <%= number_to_currency(@expense.update_expenses)%> = </b></p>
+					
+					
+					
+					
+					<p class="text-danger"><b>Total Taxable Income: <%= number_to_currency(@expense.update_taxable)%></b></p>
+				
+						
+						<hr>
+						<p class="text-danger"><b>Calculated Tax Owing: <%= number_to_currency(@expense.tax_money_owed)%></b></p>
+						<br/><br/><br/>	
+						</h4>
+				</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			</div>
+		</div>
+	</div>
+</div>
 

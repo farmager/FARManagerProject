@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140303043615) do
+ActiveRecord::Schema.define(version: 20140313172246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,10 @@ ActiveRecord::Schema.define(version: 20140303043615) do
     t.float    "vehicle_expenses"
     t.float    "hardware_costs"
     t.float    "telephone"
+    t.float    "gross_income"
+    t.float    "total_expenses"
+    t.float    "total_taxable"
+    t.float    "tax_owed"
   end
 
   create_table "fields", force: true do |t|

@@ -1,0 +1,11 @@
+  <h4><b>Tax Year: </b> <%= link_to expense.year, expense %></h4>
+  	<b>Gross Income Totals: </b><%=number_to_currency(expense.update_income)%><br/>
+  <b>Expense Totals: </b><%=number_to_currency(expense.update_expenses)%><br/>
+ <b>Total Taxable Incomes: </b><%=number_to_currency(expense.update_taxable)%><br/>
+ <p class="text-danger">Calculating Tax Owing:</p>
+
+  
+  
+  <%= link_to "Edit", edit_expense_path(expense), class:"btn btn-sm btn-default" %>
+  <%= link_to "Delete", expense, method: :delete, class:"btn btn-sm btn-default",data: { confirm: "Are you sure you want to delete this tax year?" } %><br/>
+   <div class="spacer"></div>

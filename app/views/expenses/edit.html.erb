@@ -1,4 +1,4 @@
-<% provide(:title, 'Add Expenses') %>
+<% provide(:title, 'Edit Expenses') %>
 <div id="wrapper">
 
 	<%= render "shared/sidebar"%>
@@ -7,7 +7,7 @@
 	<div id="page-content-wrapper">
 		<div class="content-header">
 			<a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-			<h3>Add Income and Expense Data</h3>
+			<h3>Edit Income and Expense Data</h3>
 
 		</div>
 
@@ -82,7 +82,7 @@
 					<div class="spacer"></div>
 
 					<%= f.form_group do %>
-					<%= f.submit "Generate Taxable Income",class: "btn btn-primary"%>
+					<%= f.submit "Edit Tax Year",class: "btn btn-primary"%>
 					<% end %>
 
 					<% end %>

@@ -38,7 +38,7 @@
 								</tr>
 								<% category.forums.each do |forum| %>
 								<tr>
-									<td class="icon"><%= image_tag 'ruby.png' %></td>
+									<td class="icon"><!-- <%= image_tag 'ruby.png' %> --></td>
 									<td class="description"> <%= link_to forum.title, forum_path(forum) %>
 									<br />
 									<span class="smaller"><%= forum.description %></span>

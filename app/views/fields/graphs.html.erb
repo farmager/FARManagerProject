@@ -27,109 +27,130 @@
 					<div class="tab-content">
 						<div class="tab-pane fade in active" id="charts">
 
-
-						<br/><br/>
+							<br/>
+							<br/>
 							<p align="center">
 
 								<b>Pie Chart by Grain Type</b>
 							</p>
 
 							<%= pie_chart current_user.fields.group("crop_type").count %>
-							
+
 							<p align="center">
 
 								<b>Pie Chart by Grain Variety</b>
 							</p>
 							<%= pie_chart current_user.fields.group("variety").count %>
-							
-										
-				
+
+						</div>
+
+						<div class="tab-pane fade" id="graphs">
+
+							<div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
+
+						</div>
+						<div class="tab-pane fade" id="analytics">
+							<br/>
+							<br/>
+							<br/>
+							<div class="col-md-1"></div>
+							<div class="col-md-9" style="font-size:1.2em">
+								<p class="well">
+									<b>Average Yields</b>
+									<br/>
+									<br/>
+
+									<b>Canola: </b><%= current_user.fields.where(crop_type:'Canola').average(:netyield) %> bushels/acre
+									<br/>
+									<b>Field Peas: </b><%= current_user.fields.where(crop_type:'Field Peas').average(:netyield) %> bushels/acre
+									<br/>
+									<b>Wheat- Hard Red Spring: </b><%= current_user.fields.where("crop_type like ?", "%Wheat%").average(:netyield) %> bushels/acre
+									<br/>
+									<b>Flax: </b><% flaxyield=current_user.fields.where(crop_type:'Flax').average(:netyield) %> 
+									<%if !flaxyield.present?%>
+									<%=flaxyield=0%> bushels/acre
+									<%else%>
+									<%=flaxyield%> bushels/acre
+									<%end%>
+									<br/>
+									<b>Maximum Canola Yield: </b><%maximumcanola=current_user.fields.limit(1).maximum(:netyield,:conditions=>"crop_type = 'Canola'",:group => "land_location") %> 
+									<%if !maximumcanola.present?%>
+									<%=maximumcanola=0%>
+									<%else%>
+									<%=maximumcanola%>
+									<%end%>
+									</br>
+									<b>Maximum Wheat Yield: </b><%= current_user.fields.limit(1).where("crop_type like ?", "%Wheat%").maximum(:netyield,:group=>:land_location) %>
+									<br/>
+									<b>Maximum Flax Yield: </b><%= maxflax=current_user.fields.limit(1).maximum(:netyield,:conditions=>"crop_type = 'Flax'",:group=>:land_location) %> 
+									<br/>
+									<b>Maximum Field Peas Yield: </b><%= current_user.fields.limit(1).maximum(:netyield,:conditions=>"crop_type = 'Field Peas'",:group=>:land_location) %> 
+									
+									<br/>
+									<br/>
+									<b>Field Peas(2013): </b><%= current_user.fields.where(crop_type:'Field Peas',year:"2013").average(:netyield) %> bushels/acre
+									<b>Field Peas(2012): </b><%= current_user.fields.where(crop_type:'Field Peas',year:"2012").average(:netyield) %> bushels/acre
+									
+									
+								</p>
+
+							</div>
+							<div class="col-md-2"></div>
+
+						</div>
 
 					</div>
-					
-							<div class="tab-pane fade" id="graphs">
-
-					<div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
-					
-
-					</div>
-					<div class="tab-pane fade" id="analytics">
-						<br/><br/><br/>
-						<div class="col-md-1"></div>
-						<div class="col-md-9" style="font-size:1.2em">
-						<p class="well">
-							<b>Average Yields</b> <br/><br/>
-						<b>Canola: </b><%= current_user.fields.where(crop_type:'Canola').average(:netyield) %> bushels/acre <br/>
-						<b>Field Peas: </b><%= current_user.fields.where(crop_type:'Field Peas').average(:netyield) %> bushels/acre <br/>
-						<b>Wheat- Hard Red Spring: </b><%= current_user.fields.where(crop_type:'Wheat Hard Red Spring').average(:netyield) %> bushels/acre <br/>
-						<b>Flax: </b><%= current_user.fields.where(crop_type:'Flax').average(:netyield) %> bushels/acre <br/>
-						
-						<b>Maximum Canola Yield: </b><%= current_user.fields.limit(1).maximum(:netyield,:conditions=>"crop_type = 'Canola'",:group=>:land_location) %>
-					
-					
-				
-						
-				</p>
-
 				</div>
-				<div class="col-md-2"></div>
-				
-				
-			
-				</div>
-
 			</div>
-		</div>
-	</div>
-	
-	<script type="text/javascript">
-	
-	
-	$(document).ready(function(){
-        $('#container').highcharts({
-            title: {
-                text: 'Average Area Yields',
-                x: -20 //center
-            },
-            subtitle: {
-                text: 'Crop Insurance',
-                x: -20
-            },
-            xAxis: {
-                categories: ['2004', '2005', '2006', '2007', '2009',
-                    '2010', '2011', '2012', '2013']
-            },
-            yAxis: {
-                title: {
-                    text: 'Yield (Bushels/Acre)'
-                },
-                plotLines: [{
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }]
-            },
-            tooltip: {
-                valueSuffix: '/acre'
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle',
-                borderWidth: 0
-            },
-            series: [{
-                name: 'Wheat',
-                data: [22, 25, 25, 26, 25, 0, 29, 29, 33]
-            }, {
-                name: 'Peas',
-                data: [24,24,24,26,26,29,0,28,30]
-            }, {
-                name: 'Canola',
-                data: [18, 18, 19, 21, 24,25, 27, 29, 31]
-            }]
-        });
-    });
-    
-</script>
+
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$('#container').highcharts({
+						title : {
+							text : 'Average Area Yields',
+							x : -20 //center
+						},
+						credits: {
+            enabled: false
+        },
+						subtitle : {
+							text : 'Crop Insurance (no 2008 data)',
+							x : -20
+						},
+						xAxis : {
+							categories : ['2004', '2005', '2006', '2007', '2009', '2010', '2011', '2012', '2013']
+						},
+						yAxis : {
+							title : {
+								text : 'Yield (Bushels/Acre)'
+							},
+							plotLines : [{
+								value : 0,
+								width : 1,
+								color : '#808080'
+							}]
+						},
+						tooltip : {
+							valueSuffix : '/acre'
+						},
+						legend : {
+							layout : 'vertical',
+							align : 'right',
+							verticalAlign : 'middle',
+							borderWidth : 0
+						},
+						series : [{
+							name : 'Wheat',
+							data : [22, 25, 25, 26, 25, 0, 29, 29, 33]
+						}, {
+							name : 'Peas',
+							data : [24, 24, 24, 26, 26, 29, 0, 28, 30]
+						}, {
+							name : 'Canola',
+							data : [18, 18, 19, 21, 24, 25, 27, 29, 31]
+						}]
+					});
+				});
+
+			</script>
 

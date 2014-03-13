@@ -38,7 +38,7 @@
       </tr>
       <% @forum.topics.each do |topic| %>
       <tr>
-        <td class="icon"><%= image_tag 'ruby.png' %></td>
+        <td class="icon"><!-- <%= image_tag 'ruby.png' %> --></td>
         <td class="description">
           <%= link_to topic.title, topic_path(topic) %><br />
           <span class="smaller">by <%= topic.user.name %></span>

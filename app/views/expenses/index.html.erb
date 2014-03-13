@@ -1,4 +1,4 @@
-<% provide(:title, 'Expenses') %>
+<% provide(:title, 'Income and Expenses') %>
 
 <div id="wrapper">
 
@@ -8,9 +8,9 @@
 	<div id="page-content-wrapper">
 		<div class="content-header">
 			<a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-			<h3>Expenses</h3>
-			<br/>
-			<a class="btn btn-default btn-primary pull-right" href="/expenses/new" role="button">Add Expenses</a>
+			<h3>Income and Expenses</h3>
+			
+			
 
 		</div>
 	
@@ -18,9 +18,13 @@
 			<div class="row">
 
 				<div class="col-md-12">
+					<div class="alert alert-info" align="center">
+    <p>Use this page to enter your income and expenses for the year or try out various tax scenarios by changing your income and expenses.</p>
+</div>
 					
-				
-
+				<a class="btn btn-default btn-primary" href="/expenses/new" role="button">Add Expenses</a>
+<div class="spacer"></div>
+			<%=render @expense%>
 					
 				</div>
 
