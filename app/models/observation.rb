@@ -8,6 +8,6 @@ class Observation < ActiveRecord::Base
   validates :landparcel, presence: true
   validates :cropobserved, presence: true
   
-  OBSERVATION_TYPES = ["Hail Observation","Pest Observation","Disease Observation","Frost Observation","Flooding Observation","Other Observation"]
+  OBSERVATION_TYPES = ["Hail Observation","Weed Observation","Pest Observation","Disease Observation","Frost Observation","Flooding Observation","Other Observation"]
 
 end

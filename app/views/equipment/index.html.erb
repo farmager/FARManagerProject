@@ -1,5 +1,7 @@
 <% provide(:title, 'Equipment') %>
 <div id="wrapper">
+	
+	<!-- add in equipment maintenance activity field -> oil change repair etc -->
 
 	<%= render "shared/sidebar"%>
 
@@ -20,11 +22,20 @@
 					<a class="btn btn-default btn-info" href="/maintenances/new" role="button">Add Maintenance Record</a>
 					</div>
 					<div class="spacer"></div>
-					<h4>Equipment:</h4>
+					<h3>Equipment your farm operations has listed:</h3>
 					<%= render @equipment %>
 					<hr>
-					<h4>Maintenance Records</h4>
-					<%= render @maintenances %>
+					<h3>Maintenance Records that exist for your equipment:</h3>
+					<% @maintenances.each do |m| %>
+					<b>Maintenance Performed on:</b>                 <%=m.equipment_maintained%><br/>
+					<b>Maintenance Details:</b>                 <%=m.maintenance_notes%><br/>
+					<b>Maintenance Date Performed:</b><%=m.maintenance_date.strftime("%B %d, %Y")%><br/>
+					<b>Next Maintenance Service Date</b>
+					<%=m.next_maintenance_date.strftime("%B %d, %Y")%>
+					<br/>
+					<br/>
+					<%end%>
+
 				</div>
 
 			</div>

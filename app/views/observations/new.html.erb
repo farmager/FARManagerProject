@@ -1,3 +1,4 @@
+<% provide(:title, 'Add Observation') %>
 <div id="wrapper">
 
   <%=render "shared/sidebar"%>
@@ -16,6 +17,7 @@
                     <div class="col-md-12">
                    <%= bootstrap_form_for(@observation, style: :horizontal, left: "col-sm-4", right: "col-sm-4",  :html => { :multipart => true }) do |f| %>
   <%= f.select(:observation_type,Observation::OBSERVATION_TYPES)%>
+  <%=f.text_field :observation_specific, label: "Identification", placeholder: "Weed, Insect or Pest Identification (if known)..."%>
   <%= f.date_select :date_observed, include_blank:true, start_year: 2000, end_year: 2014, placeholder: "Enter the observed date..." %>
   <%= f.text_field :year, placeholder: "Enter the crop year..." %>
   <%= f.collection_select :landparcel,current_user.fields.select(:land_location).uniq, :land_location, :land_location,{:include_blank => "Please select land location."}%>

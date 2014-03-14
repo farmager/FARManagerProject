@@ -1,3 +1,4 @@
+<% provide(:title, 'Observation Details') %>
 <div id="wrapper">
 
   <%=render "shared/sidebar"%>
@@ -15,6 +16,9 @@
                     
                     <div class="col-md-12">
             	<h4><b>Observation Type: </b> <%= @observation.observation_type %>
+		<br/>
+		<br/>
+		<b>Weed, Pest or Disease Identification: </b> <%= @observation.observation_specific%>
 		<br/>
 		<br/>
 		<b>Crop Year: </b> <%= @observation.year%>

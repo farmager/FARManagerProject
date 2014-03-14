@@ -18,9 +18,13 @@
 
 					<%= bootstrap_form_for(@maintenance, style: :horizontal, left: "col-sm-4", right: "col-sm-4",  :html => { :multipart => true }) do |f| %>
 
+
+<%= f.collection_select :equipment_maintained,current_user.equipment.select(:name), :name, :name,{:include_blank => "Please select equipment that was serviced."}%>
+
+
 					<%= f.date_select :maintenance_date, start_year: 2007, end_year: 2014,label: "Date Maintenance Was Performed" %>
 
-					<%= f.date_select :next_maintenance_date, start_year: 2007, end_year: 2014, label: "Future Maintenance Date" %>
+					<%= f.date_select :next_maintenance_date, start_year: 2014, end_year: 2020, label: "Future Maintenance Date" %>
 
 					<%= f.text_area :maintenance_notes, placeholder: "Enter details about maintenance that was performed...", label: "Maintenance Notes"%>
 

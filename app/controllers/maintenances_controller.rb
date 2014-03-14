@@ -52,7 +52,7 @@ class MaintenancesController < ApplicationController
 
 private
     def maintenance_params
-      params.require(:maintenance).permit(:maintenance_date,:next_maintenance_date,:maintenance_notes,:mainteance_data,
+      params.require(:maintenance).permit(:maintenance_date,:next_maintenance_date,:maintenance_notes,:mainteance_data,:equipment_maintained,
                                    :maintenance_cost,:created_at)
     end
   

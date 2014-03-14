@@ -1,5 +1,8 @@
 <% @maintenances.each do |m| %>
 					
-					
-					<%=m.maintenance_cost%>
+					<b>Maintenance Details</b>                 <%=m.maintenance_notes%><br/>
+					<b>Maintenance Date Performed:</b><%=m.maintenance_date.strftime("%B %d, %Y")%><br/>
+					<b>Next Maintenance Service Date</b>
+					<%=m.next_maintenance_date.strftime("%B %d, %Y")%>
+					<br/>
 					<%end%>

@@ -9,13 +9,16 @@
             <div class="content-header">
                <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
                   <h3>Add a Field Observation</h3>
-                
-            </div>
+           </div>
            
             <div class="page-content inset">
                 <div class="row">
                     
                     <div class="col-md-12">
+                    	
+                    		         	<div class="alert alert-info" align="center">
+    <p>Don't forget to file your crop insurance claim if you are eligible!</p>
+</div>
                         <a class="btn btn-default btn-primary pull-right" href="/observations/new" role="button">Add Observations</a>
 		
 		<%= search_form_for @search,:html => {:class => "form-inline"} do |f| %>
@@ -37,13 +40,16 @@
 		
 		<div class="spacer"></div>
 		
+	
+       
+		
 		<table class="table table-striped table-bordered table-condensed table-hover">
 			<thead>
 				<tr>
 			
 					<th>Observation Type</th>
 					<th>Observed Date</th>
-					
+					<th>Identification</th>
 					<th>Land Parcel</th>
 					<th>Crop Observed</th>
 					<th>Severity</th>
@@ -62,7 +68,7 @@
 					<td><%= observation.observation_type %></td>
 					
 					<td><%=observation.date_observed %></td>
-					
+					<td><%=observation.observation_specific%></td>
 					<td><%= observation.landparcel %></td>
 					<td><%= observation.cropobserved %></td>
 					<td><%= observation.severity %></td>
