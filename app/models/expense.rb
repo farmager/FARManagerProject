@@ -53,18 +53,24 @@ class Expense < ActiveRecord::Base
 update_income-update_expenses
   end
   
+  # http://www.cra-arc.gc.ca/E/pbg/tf/t2042/t2042-12e.pdf
   
-  
-  # 15% on the first $43,953 of taxable income, +
+# 15% on the first $43,953 of taxable income, +
 # 22% on the next $43,954 of taxable income (on the portion of taxable income over $43,953 up to $87,907), +
 # 26% on the next $48,363 of taxable income (on the portion of taxable income over $87,907 up to $136,270), +
 # 29% of taxable income over $136,270.
 #loss 
   def tax_money_owed
-    if update_taxable <= 43953
+    if update_taxable <= 43953 && update_taxable >= 0
       update_taxable * 0.15
+    elsif update_taxable >= 43954 && update_taxable <=87907
+     (43953*0.15) + ((update_taxable-43953) * 0.22)
+    elsif update_taxable >= 87908 && update_taxable <=136270
+      (43953*0.15)+ (48363*0.22) + (update_taxable * 0.26)
+    elsif update_taxable >= 136270
+      (43953*0.15)+ (48363*0.22)+ (43954*0.26) + (update_taxable * 0.29)
     else
-      4
+      update_taxable 
     end
   end
  

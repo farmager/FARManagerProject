@@ -79,7 +79,14 @@
 				
 						
 						<hr>
-						<p class="text-danger"><b>Calculated Tax Owing: <%= number_to_currency(@expense.tax_money_owed)%></b></p>
+						<p class="text-danger"><b>Calculated Tax Owing: <%= number_to_currency(@expense.tax_money_owed)%>
+							<br/><br/>
+							<%if @expense.tax_money_owed < 0 %>
+							A net LOSS has been calculated!
+							<%end%>
+							
+							
+						</b></p>
 						<br/><br/><br/>	
 						</h4>
 				</div>

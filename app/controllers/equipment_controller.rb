@@ -4,6 +4,7 @@ class EquipmentController < ApplicationController
   
   def index
     @equipment = current_user.equipment.paginate(page: params[:page])
+    @maintenances=current_user.maintenance.all
   end  
   
   def new
@@ -27,7 +28,7 @@ class EquipmentController < ApplicationController
   def destroy
      Equipment.find(params[:id]).destroy
     flash[:success] = "Equipment deleted."
-    redirect_to equipment_url
+    redirect_to equipment_index_path
     
   end
   
@@ -46,11 +47,16 @@ class EquipmentController < ApplicationController
       render 'new'
     end
   end
+  
+  
+  
+  
 
   private
+   
 
     def equipment_params
-      params.require(:equipment).permit(:name, :notes, :make,
+      params.require(:equipment).permit(:mileage_or_engine_hours,:name, :notes, :make,
                                    :model,:year,:value,:category,:image)
     end
   

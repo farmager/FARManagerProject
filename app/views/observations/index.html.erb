@@ -43,7 +43,7 @@
 			
 					<th>Observation Type</th>
 					<th>Observed Date</th>
-					<th>Year</th>
+					
 					<th>Land Parcel</th>
 					<th>Crop Observed</th>
 					<th>Severity</th>
@@ -60,8 +60,9 @@
 	
 
 					<td><%= observation.observation_type %></td>
-					<td><%= observation.date_observed %></td>
-					<td><%= observation.year %></td>
+					
+					<td><%=observation.date_observed %></td>
+					
 					<td><%= observation.landparcel %></td>
 					<td><%= observation.cropobserved %></td>
 					<td><%= observation.severity %></td>

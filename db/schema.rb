@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140313172246) do
+ActiveRecord::Schema.define(version: 20140314070628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,11 @@ ActiveRecord::Schema.define(version: 20140313172246) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.date     "maintenance_date"
+    t.date     "next_maintenance_date"
+    t.integer  "mileage_or_engine_hours"
+    t.string   "maintenance_notes"
+    t.integer  "maintenance_data"
   end
 
   add_index "equipment", ["user_id", "created_at"], name: "index_equipment_on_user_id_and_created_at", using: :btree
@@ -148,6 +153,17 @@ ActiveRecord::Schema.define(version: 20140313172246) do
 
   add_index "inventories", ["user_id", "created_at"], name: "index_inventories_on_user_id_and_created_at", using: :btree
 
+  create_table "maintenances", force: true do |t|
+    t.integer  "user_id"
+    t.date     "maintenance_date"
+    t.date     "next_maintenance_date"
+    t.string   "maintenance_notes"
+    t.integer  "mainteance_data"
+    t.float    "maintenance_cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "observations", force: true do |t|
     t.string   "observation_type"
     t.integer  "year"
@@ -164,6 +180,7 @@ ActiveRecord::Schema.define(version: 20140313172246) do
     t.datetime "image_updated_at"
     t.integer  "user_id"
     t.date     "date_observed"
+    t.string   "observation_specific"
   end
 
   create_table "posts", force: true do |t|

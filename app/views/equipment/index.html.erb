@@ -1,34 +1,34 @@
 <% provide(:title, 'Equipment') %>
- <div id="wrapper">
+<div id="wrapper">
 
-  <%=render "shared/sidebar"%>
+	<%= render "shared/sidebar"%>
 
-            <!-- Page content -->
-        <div id="page-content-wrapper">
-            <div class="content-header">
-               <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-                  <h3>Equipment</h3>
-                
-            </div>
-           
-            <div class="page-content inset">
-                <div class="row">
-                    
-                    <div class="col-md-12">
-      <a class="btn btn-default btn-primary" href="/equipment/new" role="button">Add Equipment</a>
-      <div class="spacer"></div>
- <%= render @equipment %>
-                    </div>
-              
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- Page content -->
+	<div id="page-content-wrapper">
+		<div class="content-header">
+			<a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+			<h3>Equipment</h3>
 
+		</div>
 
+		<div class="page-content inset">
+			<div class="row">
 
+				<div class="col-md-12">
+					<div class="btn-toolbar">
+					<a class="btn btn-default btn-primary" href="/equipment/new" role="button">Add Equipment</a>
+					<a class="btn btn-default btn-info" href="/maintenances/new" role="button">Add Maintenance Record</a>
+					</div>
+					<div class="spacer"></div>
+					<h4>Equipment:</h4>
+					<%= render @equipment %>
+					<hr>
+					<h4>Maintenance Records</h4>
+					<%= render @maintenances %>
+				</div>
 
-
-
-
+			</div>
+		</div>
+	</div>
+</div>
 

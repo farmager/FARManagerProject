@@ -6,12 +6,14 @@ class Equipment < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
   validates :user_id, presence: true
   # validates :notes, presence: true, length: { maximum: 140 }
-  # validates :name, presence: true, length: { maximum: 20 }
-  # validates :make, presence: true, length: { maximum: 10 }
+  validates :name, presence: true
+  validates :make, presence: true
   # validates :model, presence: true, length: { maximum: 10 }
-  # validates :year, presence: true, length: { maximum: 4 }
+  validates :year, presence: true, length: { maximum: 4 }
   # validates :value, presence: true, length: { maximum: 8 }
-  # validates :category, presence: true, length: { maximum: 10 }
+  validates :category, presence: true
 
+
+EQUIPMENT_CATEGORY = ["Combine","Tractor","Swather","Sprayer","Farm Truck","Grain Truck","Seeder","Roller","Auger","Rock Picker","Cultivator","Discer"]
 
 end

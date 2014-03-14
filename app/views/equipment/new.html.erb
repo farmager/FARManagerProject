@@ -1,3 +1,4 @@
+ <% provide(:title, 'Add Equipment') %>
  <div id="wrapper">
 
   <%=render "shared/sidebar"%>
@@ -17,15 +18,20 @@
         
 <%= bootstrap_form_for(@equipment, style: :horizontal, left: "col-sm-4", right: "col-sm-4",  :html => { :multipart => true }) do |f| %>
   <%= f.text_field :name, placeholder: "Enter the equipment name..." %>
-  <%= f.text_field :category, placeholder: "Enter the type of equipment..." %>
+  <%= f.select(:category,Equipment::EQUIPMENT_CATEGORY)%>
+  
+  <%= f.text_field :year, placeholder: "Enter the year..." %>
   <%= f.text_field :make, placeholder: "Enter the make..." %>
   <%= f.text_field :model, placeholder: "Enter the model..." %>
-  <%= f.text_field :year, placeholder: "Enter the year..." %>
-  <%= f.text_field :value, placeholder: "Enter the value..." %>
+  <%= f.text_field :value, placeholder: "Estimated value..." %>
+  <%= f.text_field :mileage_or_engine_hours,label: "Mileage or Engine Hours", placeholder: "Enter the mileage/engine hours..." %>
   <%= f.text_area :notes, placeholder: "Enter notes..." %>
   
   
-   <%= f.file_field :image %>
+  <!-- :maintenance_date,:next_maintenance_date,:mileage_or_engine_hours,:maintenance_notes,:maintenance_data, -->
+  
+  
+   <!-- <%= f.file_field :image %> -->
    
   <%= f.form_group do %>
     <%= f.submit "Add Equipment",class: "btn btn-primary"%>

@@ -5,8 +5,9 @@ class Observation < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :observation_type, presence: true
-  validates :year, presence: true
   validates :landparcel, presence: true
   validates :cropobserved, presence: true
+  
+  OBSERVATION_TYPES = ["Hail Observation","Pest Observation","Disease Observation","Frost Observation","Flooding Observation","Other Observation"]
 
 end

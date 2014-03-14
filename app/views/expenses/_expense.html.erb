@@ -2,7 +2,7 @@
   	<b>Gross Income Totals: </b><%=number_to_currency(expense.update_income)%><br/>
   <b>Expense Totals: </b><%=number_to_currency(expense.update_expenses)%><br/>
  <b>Total Taxable Incomes: </b><%=number_to_currency(expense.update_taxable)%><br/>
- <p class="text-danger">Calculating Tax Owing:</p>
+ <p class="text-danger">Calculating Tax Owing:  <%=number_to_currency(expense.tax_money_owed)%></p>
 
   
   

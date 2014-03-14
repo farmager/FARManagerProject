@@ -14,34 +14,40 @@
                 <div class="row">
                     
                     <div class="col-md-12">
-            	<h4><b>Observation Type </b> <%= @observation.observation_type %>
+            	<h4><b>Observation Type: </b> <%= @observation.observation_type %>
 		<br/>
 		<br/>
-		<b>Crop Year</b> <%= @observation.year%>
+		<b>Crop Year: </b> <%= @observation.year%>
 		<br/>
 		<br/>
-		<b>Legal Land Location</b> <%= @observation.landparcel%>
+		<b>Date Observed: </b> <%= @observation.date_observed.strftime("%B %d, %Y")%>
 		<br/>
 		<br/>
-		<b>Crop Affected</b> <%= @observation.cropobserved%>
+		<b>Legal Land Location: </b> <%= @observation.landparcel%>
 		<br/>
 		<br/>
-		<b>Severity</b> <%= @observation.severity%>
+		<b>Crop Affected: </b> <%= @observation.cropobserved%>
 		<br/>
 		<br/>
-		<b>Growth Stage</b> <%= @observation.growthstage%>
+		<b>Severity: </b> <%= @observation.severity%>
+		<br/>
+		<br/>
+		<b>Growth Stage: </b> <%= @observation.growthstage%>
 		<br/>
 		<br/>
 
-			<b>Image:</b><%= image_tag @observation.image.url %>
-			<br/>
-			
-			<b>Notes</b> <%= @observation.notes%>
-		<br/>
-		<br/>
+			<!-- <b>Image:</b><%= image_tag @observation.image.url %>
+			<br/> -->
+			<%if @observation.notes.present?%>
+			<b>Notes: </b> <%= @observation.notes%>
 			
 			<br/>
-			<b>Last Update:</b> <%= @observation.updated_at%>
+		<br/>
+			<%end%>
+		
+			
+		
+			<b>Last Update:</b> <%= time_ago_in_words(@observation.updated_at)%>
 			<br/>
 		</h4>
 	

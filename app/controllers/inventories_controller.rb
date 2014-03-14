@@ -40,7 +40,6 @@ class InventoriesController < ApplicationController
 
   def create
     @inventory = current_user.inventories.build(inventory_params)
-    # @equipment = Equipment.new(equipment_params)
     if @inventory.save
       flash[:success] = "Inventory added successfully!"
       redirect_to @inventory

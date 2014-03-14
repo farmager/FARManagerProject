@@ -1,15 +1,12 @@
 Farmagerproject::Application.routes.draw do
 
-
-
-
-  
   root 'static_pages#home'
 
   resources :users
   resources :expenses
   resources :equipment
-   
+  resources :maintenances
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :fields do
     collection do
@@ -18,13 +15,10 @@ Farmagerproject::Application.routes.draw do
   end
   match '/graphs',    to: 'fields#graphs',    via: 'get'
   resources :inventories
-  resources :schedules
-  resources :crops
+
   resources :observations
   resources :profitplanner
   resources :croprotation
-
-
 
   match '/weather', to: 'weather#index', via:'get'
   match '/signup',  to: 'users#new',            via: 'get'
@@ -36,21 +30,15 @@ Farmagerproject::Application.routes.draw do
   match '/contactus', to: 'static_pages#contactus', via: 'get'
   match '/features', to: 'static_pages#features', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
-  
-  
-    resources :categories, :except => [:index, :show]
+
+  resources :categories, :except => [:index, :show]
   resources :forums, :except => :index do
     resources :topics, :shallow => true, :except => :index do
       resources :posts, :shallow => true, :except => [:index, :show]
     end
     root :to => 'categories#index', :via => :get
   end
-  
-  
-  
-  
-  
-  
+
 # The priority is based upon order of creation: first created -> highest priority.
 # See how all your routes lay out with "rake routes".
 

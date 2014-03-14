@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
   has_many :profitplanners
   has_many :profitplanners, dependent: :destroy
   
+  has_many :maintenance
+  has_many :maintenance, dependent: :destroy
+  
   has_many :topics, :dependent => :destroy
   has_many :posts, :dependent => :destroy
  

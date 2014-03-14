@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  maintenance_date: 2014-03-14
+  next_maintenance_date: 2014-03-14
+  maintenance_notes: MyString
+  mainteance_data: 1
+  maintenance_cost: 1.5
+
+two:
+  user_id: 1
+  maintenance_date: 2014-03-14
+  next_maintenance_date: 2014-03-14
+  maintenance_notes: MyString
+  mainteance_data: 1
+  maintenance_cost: 1.5

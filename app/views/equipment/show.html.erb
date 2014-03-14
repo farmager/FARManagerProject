@@ -1,3 +1,4 @@
+ <% provide(:title, 'Equipment Details') %>
  <div id="wrapper">
 
   <%=render "shared/sidebar"%>
@@ -18,36 +19,40 @@
 		<b>Equipment: </b> <%= @equipment.name %>
 		<br/>
 			<br/>
-			<b>Make:</b> <%= @equipment.make %>
+			<b>Make: </b> <%= @equipment.make %>
 			<br/>
 
 			<br/>
-			<b>Model:</b> <%= @equipment.model %>
+			<b>Model: </b> <%= @equipment.model %>
 			<br/>
 
 			<br/>
-			<b>Year:</b> <%= @equipment.year %>
+			<b>Year: </b> <%= @equipment.year %>
 			<br/>
 
 			<br/>
-			<b>Value:</b> <%= @equipment.value%>
+			<b>Value: </b> <%= @equipment.value%>
 			<br/>
 
 			<br/>
-			<b>Category:</b> <%= @equipment.category%>
+			<b>Category: </b> <%= @equipment.category%>
+			<br/>
+			
+			<br/>
+			<b>Mileage or Engine Hours: </b> <%= @equipment.mileage_or_engine_hours%>
 			<br/>
 
 
 			<br/>
-			<b>Category:</b> <%= @equipment.notes%>
+			<b>Notes: </b> <%= @equipment.notes%>
 			<br/>
 
-			<br/>
+			<!-- <br/>
 			<b>Image:</b><%= image_tag @equipment.image.url %>
-			<br/>
+			<br/> -->
 
 			<br/>
-			<b>Last Update:</b> <%= @equipment.updated_at%>
+			<b>Last Update: </b> <%= time_ago_in_words(@equipment.updated_at)%>
 			<br/>
 			</h4>
 
