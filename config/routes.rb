@@ -5,7 +5,7 @@ Farmagerproject::Application.routes.draw do
   resources :users
   resources :expenses
   resources :equipment
-  resources :maintenances
+  resources :maintenances,only: [:new,:edit, :create, :index, :destroy]
   resources :maps
 
   resources :sessions, only: [:new, :create, :destroy]
@@ -16,6 +16,7 @@ Farmagerproject::Application.routes.draw do
   end
   match '/graphs',    to: 'fields#graphs',    via: 'get'
   resources :inventories
+  resources :storages
 
   resources :observations
   resources :profitplanner

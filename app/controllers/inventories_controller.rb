@@ -6,6 +6,7 @@ class InventoriesController < ApplicationController
     @search.sorts = 'name' if @search.sorts.empty?
     @inventories = @search.result().page(params[:page])
     @search.build_condition
+    @storages=current_user.storages.all
   end
 
   def new

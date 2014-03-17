@@ -16,25 +16,25 @@
 			<div class="row">
 
 				<div class="col-md-12">
-					<a class="btn btn-default btn-primary pull-right" href="/inventories/new" role="button">Add Inventory</a>
-				<%= search_form_for @search,:html => {:class => "form-inline"} do |f| %>
-<%= f.condition_fields do |c| %>
-<div class="input-medium search-field">
-	<%= c.attribute_fields do |a| %>
-	<%= a.attribute_select %>
-	<% end %>
-	<%= c.predicate_select %>
-	<%= c.value_fields do |v| %>
-	<%= v.text_field :value %>
-	<% end %>
-</div>
-<% end %>
-<div class="actions">
-	<%= f.submit "Search" %>
-</div>
+					
+					<a class="btn btn-default btn-primary" href="/storages/new" role="button">Add Storage</a>
+					
+					<a class="btn btn-default btn-primary" href="/inventories/new" role="button">Add Inventory</a
+<br/>
+<br/>
+<div class="bigger_spacer"></div>
 
-<% end %>
 
+
+	<%@storages.each do |m|%>
+                        	<br/>
+                        	
+                        	Storage Name: <%=m.name%>
+                        	<br/>
+                        	Capacity: <%=m.capacity%> bushels
+                        	<br/>
+                        	<%end%>
+<hr/>
 <table class="table table-striped table-bordered table-condensed table-hover">
 	<thead>
 		<tr>

@@ -66,25 +66,41 @@
                 </div>
             </div>
             <div class="row">
-            	<div class="col-md-4">
-                        <p class="well"></p>
-                    </div>
-                    <div class="col-md-4">
-                        <p class="well"></p>
-                    </div>
-                      <div class="col-md-4">
+            	<div class="page-content inset">
+            
+                    <div class="col-md-7">
                         <p class="well">
                         	
+                        	<b>Upcoming Service Dates</b>
+                        	<br/>
+                        	<%@maintenances.each do |m|%>
+                        	<br/>
                         	
-                        	
-                        	
-                        	
-                        	
-                        	
-                        	
+                        	Equipment: <%=m.equipment_maintained%>
+                        	<br/>
+                        	Service Date: <%=m.next_maintenance_date.strftime("%B %d, %Y")%>
+                        	<br/>
+                        	<%end%>
                         	
                         </p>
                     </div>
+                    
+                    
+                    	<div class="col-md-5">
+                        
+                        	<div class="well">
+                        		<b>Crop Distribution through the Years</b>
+                        	<%= pie_chart current_user.fields.group("crop_type").count %>
+                        	</div>
+                        
+                    </div>
+                      
+                        	
+                     </div>   	
+                        	
+                        	
+                        	
+                     
             	
             </div>
         </div>

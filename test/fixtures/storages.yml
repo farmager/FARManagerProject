@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  name: MyString
+  capacity: 1
+  group: MyString
+  notes: MyString
+  rent_or_own: MyString
+
+two:
+  user_id: 1
+  name: MyString
+  capacity: 1
+  group: MyString
+  notes: MyString
+  rent_or_own: MyString

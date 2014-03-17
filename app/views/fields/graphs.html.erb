@@ -38,9 +38,9 @@
 
 							<p align="center">
 
-								<b>Pie Chart by Grain Variety</b>
+								<b>Bar by Grain Variety</b>
 							</p>
-							<%= pie_chart current_user.fields.group("variety").count %>
+							<%= bar_chart current_user.fields.group("variety").count %>
 
 						</div>
 
@@ -60,11 +60,11 @@
 									<br/>
 									<br/>
 
-									<b>Canola: </b><%= current_user.fields.where(crop_type:'Canola').average(:netyield) %> bushels/acre
+									<b>Canola: </b><%= current_user.fields.where(crop_type:'Canola').average(:netyield).round(1) %> bushels/acre
 									<br/>
-									<b>Field Peas: </b><%= current_user.fields.where(crop_type:'Field Peas').average(:netyield) %> bushels/acre
+									<b>Field Peas: </b><%= current_user.fields.where(crop_type:'Field Peas').average(:netyield).round(1) %> bushels/acre
 									<br/>
-									<b>Wheat- Hard Red Spring: </b><%= current_user.fields.where("crop_type like ?", "%Wheat%").average(:netyield) %> bushels/acre
+									<b>Wheat- Hard Red Spring: </b><%= current_user.fields.where("crop_type like ?", "%Wheat%").average(:netyield).round(1) %> bushels/acre
 									<br/>
 									<b>Flax: </b><% flaxyield=current_user.fields.where(crop_type:'Flax').average(:netyield) %> 
 									<%if !flaxyield.present?%>
@@ -72,6 +72,7 @@
 									<%else%>
 									<%=flaxyield%> bushels/acre
 									<%end%>
+									<br/>
 									<br/>
 									<b>Maximum Canola Yield: </b><%maximumcanola=current_user.fields.limit(1).maximum(:netyield,:conditions=>"crop_type = 'Canola'",:group => "land_location") %> 
 									<%if !maximumcanola.present?%>
@@ -82,15 +83,15 @@
 									</br>
 									<b>Maximum Wheat Yield: </b><%= current_user.fields.limit(1).where("crop_type like ?", "%Wheat%").maximum(:netyield,:group=>:land_location) %>
 									<br/>
-									<b>Maximum Flax Yield: </b><%= maxflax=current_user.fields.limit(1).maximum(:netyield,:conditions=>"crop_type = 'Flax'",:group=>:land_location) %> 
-									<br/>
+									
+								
 									<b>Maximum Field Peas Yield: </b><%= current_user.fields.limit(1).maximum(:netyield,:conditions=>"crop_type = 'Field Peas'",:group=>:land_location) %> 
 									
 									<br/>
 									<br/>
-									<b>Field Peas(2013): </b><%= current_user.fields.where(crop_type:'Field Peas',year:"2013").average(:netyield) %> bushels/acre
+									<!-- <b>Field Peas(2013): </b><%= current_user.fields.where(crop_type:'Field Peas',year:"2013").average(:netyield) %> bushels/acre
 									<b>Field Peas(2012): </b><%= current_user.fields.where(crop_type:'Field Peas',year:"2012").average(:netyield) %> bushels/acre
-									
+									 -->
 									
 								</p>
 
@@ -153,4 +154,3 @@
 				});
 
 			</script>
-

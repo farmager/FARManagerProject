@@ -1,6 +1,5 @@
 <% provide(:title, 'Weather') %>
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
 <div id="wrapper">
 
 <%=render "shared/sidebar"%>
@@ -19,16 +18,11 @@
 
 				<div class="col-md-12">
 	
-			<!-- this value will change on production to eug's id there -->
-				<!-- <% if current_user.id==12 %> -->
+			
 				
 					<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 					<div id="2013" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-					<!-- <% else %> -->
-					Not Eugene
-					<!-- <%end%> -->
-					
-					<!-- <%=render "shared/weather"%> -->
+			
 				</div>
 
 			</div>

@@ -21,6 +21,9 @@ class User < ActiveRecord::Base
   has_many :maintenance
   has_many :maintenance, dependent: :destroy
   
+    has_many :storages
+  has_many :storages, dependent: :destroy
+  
   has_many :topics, :dependent => :destroy
   has_many :posts, :dependent => :destroy
  
