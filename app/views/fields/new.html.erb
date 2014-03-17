@@ -1,168 +1,142 @@
+<head><META HTTP-EQUIV="refresh" CONTENT="15"></head>
+
 <div id="wrapper">
 
-  <%=render "shared/sidebar"%>
+	<%= render "shared/sidebar"%>
 
-            <!-- Page content -->
-        <div id="page-content-wrapper">
-            <div class="content-header">
-               <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-                  <h3>Add A Field</h3>
-                
-            </div>
-           
-            <div class="page-content inset">
-                <div class="row">
-                    
-                    <div class="col-md-12">
-                    	<%= bootstrap_form_for(@field, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
-<div class="panel-group" id="accordion">
-	  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          <b>Enter field information.</b>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
-      <div class="panel-body">
-       <%= f.text_field :land_location,label: "Legal Land Location", placeholder: "Enter the legal land location..." %>
+	<!-- Page content -->
+	<div id="page-content-wrapper">
+		<div class="content-header">
+			<a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+			<h3>Add A Field</h3>
 
-<%= f.text_field :land_name, placeholder: "Enter land name or nickname..." %>
+		</div>
 
-<%= f.text_field :year, placeholder: "Enter the crop year..." %>
+		<div class="page-content inset">
+			<div class="row">
 
-<%= f.text_area :notes, placeholder: "Enter any notes..." %>
+				<div class="col-md-12">
+					<%= bootstrap_form_for(@field, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> <b>Enter field information.</b> </a></h4>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<%= f.text_field :land_location,label: "Legal Land Location", placeholder: "Enter the legal land location..." %>
 
+									<%= f.text_field :land_name, placeholder: "Enter land name or nickname..." %>
 
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          <b>Enter seeding details.</b>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse">
-      <div class="panel-body">
-       <%= f.text_field :crop_type,label: "Grain", placeholder: "Enter the grain type" %>
+									<%= f.text_field :year, placeholder: "Enter the crop year..." %>
 
-<%= f.text_field :variety, placeholder: "Enter grain variety..." %>
+									<%= f.text_area :notes, placeholder: "Enter any notes..." %>
 
-<%= f.text_field :seeded_acres, placeholder: "Enter the actual seeded acres..." %>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> <b>Enter seeding details.</b> </a></h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse">
+								<div class="panel-body">
+									<%= f.text_field :crop_type,label: "Grain", placeholder: "Enter the grain type" %>
 
- <%= f.date_select :seeding_date,include_blank:true, start_year: 2000, end_year: 2014, placeholder: "Enter the seeded date..." %>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          <b>Enter chemicals applied.</b>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse">
-      <div class="panel-body">
-<%= f.text_field :herbicides, placeholder: "Enter herbicides..." %>
+									<%= f.text_field :variety, placeholder: "Enter grain variety..." %>
 
-<%= f.text_field :fungicides, placeholder: "Enter fungicides..." %>
+									<%= f.text_field :seeded_acres, placeholder: "Enter the actual seeded acres..." %>
 
-<h4 align="center"><b>Enter fertilizer information</b></h4>
+									<%= f.date_select :seeding_date,include_blank:true, start_year: 2000, end_year: 2014, placeholder: "Enter the seeded date..." %>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> <b>Enter chemicals applied.</b> </a></h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse">
+								<div class="panel-body">
+									<%= f.text_field :herbicides, placeholder: "Enter herbicides..." %>
 
-<%= f.text_field :f_nitrogen, label: "Nitrogen", placeholder: "Enter nitrogen applied..." %>
+									<%= f.text_field :fungicides, placeholder: "Enter fungicides..." %>
 
-<%= f.text_field :f_phosphorous, label: "Phosphorous", placeholder: "Enter phosphorous applied..." %>
+									<h4 align="center"><b>Enter fertilizer information</b></h4>
 
-<%= f.text_field :f_potassium,label: "Potassium", placeholder: "Enter potassium" %>
+									<%= f.text_field :f_nitrogen, label: "Nitrogen", placeholder: "Enter nitrogen applied..." %>
 
-<%= f.text_field :f_sulphur, label: "Sulphur", placeholder: "Enter sulfur" %>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-         <b>Enter harvest details.</b>
-        </a>
-      </h4>
-    </div>
-  
-    <div id="collapseFour" class="panel-collapse collapse">
-      <div class="panel-body">
-      	<%= f.text_field :production, label: "Production Amount", placeholder: "Enter the total bushels..." %>
-<%= f.text_field :netyield, label: "Net Yield/Acre", placeholder: "Enter your yield..." %>
-<%= f.text_field :grade, label: "Grade", placeholder: "Enter the grain..." %>
-      	
-      	
-     
-      </div>
-    </div>
-  </div>
+									<%= f.text_field :f_phosphorous, label: "Phosphorous", placeholder: "Enter phosphorous applied..." %>
+
+									<%= f.text_field :f_potassium,label: "Potassium", placeholder: "Enter potassium" %>
+
+									<%= f.text_field :f_sulphur, label: "Sulphur", placeholder: "Enter sulfur" %>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"> <b>Enter harvest details.</b> </a></h4>
+							</div>
+
+							<div id="collapseFour" class="panel-collapse collapse">
+								<div class="panel-body">
+									<%= f.text_field :production, label: "Production Amount", placeholder: "Enter the total bushels..." %>
+									<%= f.text_field :netyield, label: "Net Yield/Acre", placeholder: "Enter your yield..." %>
+									<%= f.text_field :grade, label: "Grade", placeholder: "Enter the grain..." %>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="spacer"></div>
+
+					<%= f.form_group do %>
+					<%= f.submit "Add Fields",class: "btn btn-primary"%>
+					<% end %>
+
+					<% end %>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
 </div>
 
-<div class="spacer"></div>
-
-
-<%= f.form_group do %>
-<%= f.submit "Add Fields",class: "btn btn-primary"%>
-<% end %>
-
-<% end %>
-
-
-
-                       
-                    </div>
-               
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 <script type="text/javascript">
-
-$(function () {  
-  $('#field_land_location').tokenInput('/fields/new.json', { 
-  	crossDomain: false,
-  	hintText: "Enter land location...",
-  	searchDelay: 200,
-  	propertyToSearch: "land_location", 
-  	tokenValue:"land_location",
-allowFreeTagging: true,
- minChars: 1,
-tokenLimit: 1,
- allowCustomEntry: true,
- preventDuplicates: true
-  	});  
-}); 
+	$(function() {
+		$('#field_land_location').tokenInput('/fields/new.json', {
+			crossDomain : false,
+			hintText : "Enter land location...",
+			searchDelay : 200,
+			propertyToSearch : "land_location",
+			tokenValue : "land_location",
+			allowFreeTagging : true,
+			minChars : 1,
+			tokenLimit : 1,
+			allowCustomEntry : true,
+			preventDuplicates : true
+		});
+	});
 
 </script>
 
-
 <script type="text/javascript">
-
-$(function () {  
-  $('#field_crop_type').tokenInput('/fields/new.json', { 
-  	crossDomain: false,
-  	hintText: "Enter crop type...",
-  	searchDelay: 200,
-  	propertyToSearch: "crop_type", 
-  	tokenValue:"crop_type",
-allowFreeTagging: true,
- minChars: 1,
-tokenLimit: 1,
- allowCustomEntry: true,
- preventDuplicates: true
-  	});  
-}); 
+	$(function() {
+		$('#field_crop_type').tokenInput('/fields/new.json', {
+			crossDomain : false,
+			hintText : "Enter crop type...",
+			searchDelay : 200,
+			propertyToSearch : "crop_type",
+			tokenValue : "crop_type",
+			allowFreeTagging : true,
+			minChars : 1,
+			tokenLimit : 1,
+			allowCustomEntry : true,
+			preventDuplicates : true
+		});
+	});
 
 </script>
-
 

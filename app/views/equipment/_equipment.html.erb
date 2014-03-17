@@ -1,6 +1,6 @@
   <h4><b>Equipment Name:</b> <%= link_to equipment.name, equipment %> </h4>
   	<p><b>Category</b> <%=(equipment.category) %></p>
-   <p><i>Created <%= time_ago_in_words(equipment.created_at) %> ago.</i></p>
+ 
   <%= link_to "Edit", edit_equipment_path(equipment), class:"btn btn-sm btn-default" %>
   <%= link_to "Delete", equipment, method: :delete, class:"btn btn-sm btn-default",data: { confirm: "Are you sure you want to delete this?" } %>
-  
+  <hr/>

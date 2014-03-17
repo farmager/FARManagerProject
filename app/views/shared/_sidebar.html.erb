@@ -15,21 +15,27 @@
                 <li>
                 	<%= link_to "Equipment",equipment_index_path %>
                 </li>
-                <li>
-                	<%= link_to "Income and Expenses",expenses_path %>
-                </li>
                 <li><%= link_to "Observations",observations_path %>
                 </li>
                 
-                <li><%= link_to "Crop Rotation",croprotation_index_path %>
+                 <li><%= link_to "Crop Rotation",croprotation_index_path %>
                 </li>
-                <li><%= link_to "Profit Planner",profitplanner_index_path %>
+                <li>
+                	<%= link_to "Income and Expenses",expenses_path %>
                 </li>
-                <li><%= link_to "Forum",forums_root_path %>
+                
+                
+                <li><%= link_to "Satellite Maps",maps_path,'data-no-turbolink' => true %>
                 </li>
+                <li><%= link_to "Profit Planner",profitplanner_index_path,'data-no-turbolink' => true %>
+                </li>
+             
                 
                 <li>
                 	<%= link_to "Weather",weather_path %>
+                </li>
+                
+                 <li><%= link_to "Forum",forums_root_path %>
                 </li>
                 
             </ul>

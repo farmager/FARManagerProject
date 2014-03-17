@@ -22,7 +22,7 @@ class FieldsController < ApplicationController
   def index
 
     @search = current_user.fields.search(search_params)
-    @search.sorts = 'land_location' if @search.sorts.empty?
+    @search.sorts = 'year desc' if @search.sorts.empty?
     @fields = @search.result().page(params[:page])
     @search.build_condition
 

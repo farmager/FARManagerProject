@@ -2,6 +2,9 @@ class Field < ActiveRecord::Base
  
   validates :user_id, presence: true
   validates :land_location, presence: true
+  
+
+  
   # validates :land_name, length: { in: 2..20 }
   # validates :year, presence: true,numericality:true, length: { is: 4 }
   # validates :seeded_acres, presence: true, numericality: true, length: { maximum: 4 }

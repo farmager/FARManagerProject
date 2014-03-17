@@ -6,6 +6,7 @@ Farmagerproject::Application.routes.draw do
   resources :expenses
   resources :equipment
   resources :maintenances
+  resources :maps
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :fields do

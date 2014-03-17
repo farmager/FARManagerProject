@@ -26,7 +26,7 @@ class MaintenancesController < ApplicationController
   
   def destroy
      Maintenance.find(params[:id]).destroy
-    flash[:success] = "Record deleted."
+    flash[:success] = "Maintenance record successfully deleted."
     redirect_to equipment_index_path
     
   end
@@ -40,7 +40,7 @@ class MaintenancesController < ApplicationController
        @maintenance = current_user.maintenance.build(maintenance_params)
     
     if @maintenance.save
-      flash[:success] = "Record added successfully!"
+      flash[:success] = "Maintenance record added successfully!"
       redirect_to equipment_index_path
     else
       render 'new'

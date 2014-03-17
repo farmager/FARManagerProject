@@ -28,11 +28,11 @@
 
 				<div class="col-md-12">
 
-					<div id="loading">
+					<!-- <div id="loading">
     <img src="http://www.webdesign.org/img_articles/13053/loading-gif-animation.gif" alt="loading" />
 </div>
 
-<button onclick="dosomething();">Click me</button>
+<button onclick="dosomething();">Click me</button> -->
 
 					<table class="table table-striped table-bordered table-condensed table-hover">
 						<thead>
@@ -87,7 +87,7 @@
 								<td style="color:red">Hard Red Spring Wheat</td>
 								<td style="color:#FF6600">Canola</td>
 								<td style="color:blue">Pulse(Peas or Lentils)</td>
-								<%elsif field.crop_type=='Wheat- Hard Red Spring' && field.year==2013%>
+								<%elsif field.crop_type.include?("Wheat") && field.year==2013%>
 								<td style="color:red">Canola</td>
 								<td style="color:#FF6600">Pulse(Peas or Lentils)</td>
 								<td style="color:blue">Hard Red Spring Wheat</td>

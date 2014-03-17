@@ -12,9 +12,9 @@
 //
 //= require jsapi
 //= require chartkick
+//= require markerclusterer
 //= require jquery
 //= require jquery_ujs
-//= require jquery.handsontable.full
 //= require bootstrap
 //= require highcharts
 //= require exporting

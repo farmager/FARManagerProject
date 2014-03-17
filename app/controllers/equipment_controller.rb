@@ -35,11 +35,12 @@ class EquipmentController < ApplicationController
    
   def show
     @equipment = Equipment.find(params[:id])
+    @maintenances=current_user.maintenance.all
   end
   
     def create
        @equipment = current_user.equipment.build(equipment_params)
-    # @equipment = Equipment.new(equipment_params)
+    
     if @equipment.save
       flash[:success] = "Equipment added successfully!"
       redirect_to @equipment
