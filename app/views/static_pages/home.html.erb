@@ -313,7 +313,8 @@
     </ol>
     <div class="carousel-inner">
       <div class="item active">
-        <img src="/assets/outside.JPG" class="img-responsive">
+        <%= link_to image_tag("outside.JPG", class:"img-responsive featurette", alt: "")  %>
+
         <div class="container">
           <div class="carousel-caption">
             <h1>Make your farm smarter with FARManager.</h1>
@@ -324,7 +325,8 @@
         </div>
       </div>
       <div class="item">
-        <img src="/assets/bales.jpg" class="img-responsive">
+        <%= link_to image_tag("bales.jpg", class:"img-responsive featurette", alt: "")  %>
+
         <div class="container">
           <div class="carousel-caption">
             <h1>Let FARManager look after your operation.</h1>
@@ -334,7 +336,9 @@
         </div>
       </div>
       <div class="item">
-        <img src="/assets/elevator.jpg" class="img-responsive">
+
+        <%= link_to image_tag("elevator.jpg", class:"img-responsive featurette", alt: "")  %>
+
         <div class="container">
           <div class="carousel-caption">
             <h1>FARManager was made with growers in mind.</h1>
@@ -363,19 +367,23 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-md-4 text-center">
-          <img class="img-circle" src="/assets/farmop.jpg">
+
+          <%= link_to image_tag("farmop.jpg", class:"img-circle", alt: "Farm Operation")  %>
+
           <h2>Manage Your Farm</h2>
           <p>Gain a clear picture of all farming operations with FARManager.</p>
           <p><a class="btn btn-default" href="/features">View details »</a></p>
         </div>
         <div class="col-md-4 text-center">
-          <img class="img-circle" src="/assets/profit.jpg">
+          <%= link_to image_tag("profit.jpg", class:"img-circle", alt: "Profit")  %>
+
           <h2>Check Your Profits</h2>
           <p>Use the profit planner to check out per field performance or analyze tax scenarios so you are prepared.</p>
           <p><a class="btn btn-default" href="/features">View details »</a></p>
         </div>
         <div class="col-md-4 text-center">
-          <img class="img-circle" src="/assets/smallstats.png">
+          <%= link_to image_tag("smallstats.png", class:"img-circle", alt: "Field Performance")  %>
+
           <h2>Monitor Field Performance</h2>
           <p>Use FARManager's powerful analytics to see field performance from year to year.</p>
           <p><a class="btn btn-default" href="/features">View details »</a></p>
@@ -385,10 +393,11 @@
 
       <!-- START THE FEATURETTES -->
 
-      <hr class="homr-featurette-divider">
+      <hr class="home-featurette-divider">
 
       <div class="home-featurette">
-        <img class="home-featurette-image img-circle pull-right" src="/assets/wheat.jpg">
+        <%= link_to image_tag("wheat.jpg", class:"img-circle pull-right home-featurette-image", alt: "")  %>
+
         <h2 class="home-featurette-heading">See what FARManager can do for you! <span class="text-muted">It'll blow your mind.</span></h2>
         <p class="lead">"This application is a big asset to my farm- having the ability to see everything within a few clicks of the mouse is great. With so any great features it is hard to pick a favourite. I recommend this service to all farmers!" </p>
         <b>-Cardiff Farms, Eugene and Brenda Cardiff</b>
