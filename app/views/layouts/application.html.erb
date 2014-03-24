@@ -18,8 +18,10 @@
          <% flash.each do |key, value| %>
         <%= content_tag(:div, value, id: "flash", class: "alert alert-#{key}") %>
       <% end %>
+
       <%= yield %>
-       <!-- <%= render 'layouts/footer' %> -->
+
+
        
     </div>
   </body>

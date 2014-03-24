@@ -37,6 +37,29 @@ ActiveRecord::Schema.define(version: 20140317072135) do
     t.datetime "updated_at"
   end
 
+  create_table "crops", force: true do |t|
+    t.string   "crop_type"
+    t.string   "variety"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "herbicides"
+    t.string   "fungicides"
+    t.integer  "actual_seeded"
+    t.integer  "total_produced"
+    t.integer  "yield"
+    t.integer  "field_id"
+    t.integer  "grade"
+    t.integer  "nitrogen"
+    t.integer  "phosphorous"
+    t.integer  "potassium"
+    t.integer  "sulfur"
+    t.integer  "years"
+    t.date     "date_seeded"
+    t.integer  "fields_id"
+  end
+
+  add_index "crops", ["fields_id"], name: "index_crops_on_fields_id", using: :btree
+
   create_table "equipment", force: true do |t|
     t.string   "notes"
     t.integer  "user_id"
@@ -198,6 +221,16 @@ ActiveRecord::Schema.define(version: 20140317072135) do
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "schedules", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "year"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "start"
+    t.datetime "end"
   end
 
   create_table "storages", force: true do |t|

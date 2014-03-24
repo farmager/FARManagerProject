@@ -299,52 +299,172 @@
 
 <% else %>
 <% provide(:title, 'Home') %>
-<div class="container">
 
-	<!-- Main component for a primary marketing message or call to action -->
-	<div class="jumbotron">
-		<h1>Farmanager</h1>
-		<p>
-			A fourth year University of Regina Software Engineering project by Erin Cardiff. Farmanager was created for my dad, the owner of Cardiff Farms. This represents the first revision.
-		</p>
-		<p>
-			<a class="btn btn-lg btn-primary" href="/signup" role="button">Sign up now &raquo;</a>
-		</p>
-	</div>
 
-</div>
-<!-- /container -->
 
-<div class="container marketing">
+  <!-- Carousel
+================================================== -->
+  <div id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="/assets/outside.JPG" class="img-responsive">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Make your farm smarter with FARManager.</h1>
+            <p>Increase Yields. Increase Profits. Collaborate with other farmers.</p>
 
-	<!-- Three columns of text below the carousel -->
-	<div class="row">
-		<div class="col-lg-4">
-			<%= link_to image_tag("wheat.png", class:"img-circle", alt: "wheat")  %>
-			<!-- <img class="img-circle" data-src="" alt="Generic placeholder image"> -->
-			<!-- <%= link_to image_tag("icon.jpg", alt: "Rails")=%> -->
-			<!-- <src="/app/assets/images/icon.jpg" alt="..." class="img-rounded"> -->
-			<h2>Track Yearly Results</h2>
-			<p>
-				Track yearly results by recording seeded acres, bushels per acre, pest infestation and so much more with Farmanager.
-			</p>
-		</div><!-- /.col-lg-4 -->
-		<div class="col-lg-4">
-			<%= link_to image_tag("combine.jpg", class:"img-circle", alt: "combine")  %>
-			<!-- <img class="img-circle" data-src="" alt="Generic placeholder image"> -->
-			<h2>Keep Maintenace Records</h2>
-			<p>
-				Keep track of when your combine, swather, tractor, airseeder and even your wife's SUV need maintenace with Farmanager's easy to use tracking utility.
-			</p>
-		</div><!-- /.col-lg-4 -->
-		<div class="col-lg-4">
-			<%= link_to image_tag("expenses.jpg", class:"img-circle", alt: "Image courtesy of Stuart Miles / FreeDigitalPhotos.net")  %>
+            <p><a class="btn btn-lg btn-primary" href="/signup" role="button">Sign up Now!</a></p>
+            </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/assets/bales.jpg" class="img-responsive">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Let FARManager look after your operation.</h1>
+            <p>Record field data, check your potenial profits, get a bird's eye view of your farm, check tax scenarios and so much more with FARManager.</p>
+            <p><a class="btn btn-large btn-primary" href="/features">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/assets/elevator.jpg" class="img-responsive">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>FARManager was made with growers in mind.</h1>
+            <p>Built for Cardiff Farms and expanded for all producers FARManager offers something from the small to large farmer.</p>
+            <p><a class="btn btn-large btn-primary" href="/about">About Us</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="icon-next"></span>
+    </a>
+  </div>
+  <!-- /.carousel -->
 
-			<h2>Record Farm Expenses</h2>
-			<p>
-				Farmanager knows keeping track of those never ending expenses are difficult but with our easy to use interface accounting will be a breeze!
-			</p>
-		</div><!-- /.col-lg-4 -->
-	</div><!-- /.row -->
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img class="img-circle" src="/assets/farmop.jpg">
+          <h2>Manage Your Farm</h2>
+          <p>Gain a clear picture of all farming operations with FARManager.</p>
+          <p><a class="btn btn-default" href="/features">View details »</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img class="img-circle" src="/assets/profit.jpg">
+          <h2>Check Your Profits</h2>
+          <p>Use the profit planner to check out per field performance or analyze tax scenarios so you are prepared.</p>
+          <p><a class="btn btn-default" href="/features">View details »</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img class="img-circle" src="/assets/smallstats.png">
+          <h2>Monitor Field Performance</h2>
+          <p>Use FARManager's powerful analytics to see field performance from year to year.</p>
+          <p><a class="btn btn-default" href="/features">View details »</a></p>
+        </div>
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="homr-featurette-divider">
+
+      <div class="home-featurette">
+        <img class="home-featurette-image img-circle pull-right" src="/assets/wheat.jpg">
+        <h2 class="home-featurette-heading">See what FARManager can do for you! <span class="text-muted">It'll blow your mind.</span></h2>
+        <p class="lead">"This application is a big asset to my farm- having the ability to see everything within a few clicks of the mouse is great. With so any great features it is hard to pick a favourite. I recommend this service to all farmers!" </p>
+        <b>-Cardiff Farms, Eugene and Brenda Cardiff</b>
+      </div>
+
+      <hr class="home-featurette-divider">
+
+      <!--<div class="home-featurette">-->
+        <!--<img class="home-featurette-image img-circle pull-left" src="http://placehold.it/512">-->
+        <!--<h2 class="home-featurette-heading">Smaller Footprint. <span class="text-muted">Lightweight.</span></h2>-->
+        <!--<p class="lead">The new Bootstrap 3 promises to be a smaller build. The separate Bootstrap base and responsive.css files have now been merged into one. There is no more fixed grid, only fluid.</p>-->
+      <!--</div>-->
+
+      <!--<hr class="home-featurette-divider">-->
+
+      <!--<div class="home-featurette">-->
+        <!--<img class="home-featurette-image img-circle pull-right" src="http://placehold.it/512">-->
+        <!--<h2 class="home-featurette-heading">And lastly, this one. <span class="text-muted">Flatness.</span></h2>-->
+        <!--<p class="lead">A big design trend for 2013 is "flat" design. Gone are the days of excessive gradients and shadows. Designers are producing cleaner flat designs, and Bootstrap 3 takes advantage of this minimalist trend.</p>-->
+      <!--</div>-->
+
+      <!--<hr class="home-featurette-divider">-->
+
+      <!-- /END THE FEATURETTES -->
+
+
+
+
+
+
+      <!--<div class="container">-->
+
+	<!--&lt;!&ndash; Main component for a primary marketing message or call to action &ndash;&gt;-->
+	<!--<div class="jumbotron">-->
+		<!--<h1>Farmanager</h1>-->
+		<!--<p>-->
+			<!--A fourth year University of Regina Software Engineering project by Erin Cardiff. Farmanager was created for my dad, the owner of Cardiff Farms. This represents the first revision.-->
+		<!--</p>-->
+		<!--<p>-->
+			<!--<a class="btn btn-lg btn-primary" href="/signup" role="button">Sign up now &raquo;</a>-->
+		<!--</p>-->
+	<!--</div>-->
+
+<!--</div>-->
+<!--&lt;!&ndash; /container &ndash;&gt;-->
+
+<!--<div class="container marketing">-->
+
+	<!--&lt;!&ndash; Three columns of text below the carousel &ndash;&gt;-->
+	<!--<div class="row">-->
+		<!--<div class="col-lg-4">-->
+			<!--<%= link_to image_tag("wheat.png", class:"img-circle", alt: "wheat")  %>-->
+			<!--&lt;!&ndash; <img class="img-circle" data-src="" alt="Generic placeholder image"> &ndash;&gt;-->
+			<!--&lt;!&ndash; <%= link_to image_tag("icon.jpg", alt: "Rails")=%> &ndash;&gt;-->
+			<!--&lt;!&ndash; <src="/app/assets/images/icon.jpg" alt="..." class="img-rounded"> &ndash;&gt;-->
+			<!--<h2>Track Yearly Results</h2>-->
+			<!--<p>-->
+				<!--Track yearly results by recording seeded acres, bushels per acre, pest infestation and so much more with Farmanager.-->
+			<!--</p>-->
+		<!--</div>&lt;!&ndash; /.col-lg-4 &ndash;&gt;-->
+		<!--<div class="col-lg-4">-->
+			<!--<%= link_to image_tag("combine.jpg", class:"img-circle", alt: "combine")  %>-->
+			<!--&lt;!&ndash; <img class="img-circle" data-src="" alt="Generic placeholder image"> &ndash;&gt;-->
+			<!--<h2>Keep Maintenace Records</h2>-->
+			<!--<p>-->
+				<!--Keep track of when your combine, swather, tractor, airseeder and even your wife's SUV need maintenace with Farmanager's easy to use tracking utility.-->
+			<!--</p>-->
+		<!--</div>&lt;!&ndash; /.col-lg-4 &ndash;&gt;-->
+		<!--<div class="col-lg-4">-->
+			<!--<%= link_to image_tag("expenses.jpg", class:"img-circle", alt: "Image courtesy of Stuart Miles / FreeDigitalPhotos.net")  %>-->
+
+			<!--<h2>Record Farm Expenses</h2>-->
+			<!--<p>-->
+				<!--Farmanager knows keeping track of those never ending expenses are difficult but with our easy to use interface accounting will be a breeze!-->
+			<!--</p>-->
+		<!--</div>&lt;!&ndash; /.col-lg-4 &ndash;&gt;-->
+	<!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
 
 	<% end %>
