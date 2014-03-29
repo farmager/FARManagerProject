@@ -1,0 +1,226 @@
+
+<% provide(:title, 'Peas Profit Planner') %>
+<div id="wrapper">
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#calxpeas').calx({
+            autocalculate : true
+        });
+
+        $('#calculate').click(function() {
+            $('#calxpeas').calx('update');
+        });
+    });
+</script>
+
+<style>
+    table {
+        width: 50%
+    }
+    table td {
+        padding: .4em;
+        border: 1px solid #ffffff;
+        border-bottom: 0px;
+        vertical-align: top;
+        background: #fff;
+    }
+
+    table th {
+        font-weight: normal;
+        padding: .6em;
+        font-size: 1.0em;
+    }
+
+    table td:first-child {
+        border-left: 0px;
+    }
+    table td:last-child {
+        border-right: 0px;
+    }
+
+</style>
+
+<%= render "shared/sidebar"%>
+
+<div id="page-content-wrapper">
+
+  <div class="page-content inset">
+    <div class="row">
+
+      <div class="col-md-12">
+
+
+
+        <br/>
+        <div class="col-md-2"></div>
+
+        <form id="calxpeas">
+          <table class="profit">
+            <thead>
+            <tr>
+
+              <td><b>Field Pea Profit Planning</b></td>
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <th><i>Estimate Return Per Acre</i></th>
+            <tr>
+              <th>Estimated Yield</th><td>
+              <input id="estimatedyield" type="text" name="estimatedyield[]" value="37.30" data-format=" 0,0[.]00"/>
+            </td>
+
+            </tr>
+            <tr>
+              <th>Estimated Market Price</th><td>
+              <input id="estimatedmarketprice" type="text" name="estmarketprice[]" value="9.00" data-format="$ 0,0[.]00"/>
+            </td>
+            </tr>
+            <tr>
+              <th>Estimated Gross Revenue</th><td>
+              <input id="estimatedrev" type="text" name="estimated[]" value="" data-format="$ 0,0[.]00" data-formula="($estimatedyield*$estimatedmarketprice)" />
+            </td>
+            </tr>
+            <tr>
+              <th><i>Variable Expenses</i></th>
+            </tr>
+            <tr>
+              <th>Seed</th><td>
+              <input id="seed" type="text" name="seed[]" data-format="$ 0,0[.]00" value="42.00" />
+            </td>
+            </tr>
+            <tr>
+              <th>Fertilizer-Nitrogen</th><td>
+              <input id="nitrogen" type="text" name="nitrogen[]" data-format="$ 0,0[.]00" value="2.88" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Fertilizer-Phosphorous</th><td>
+              <input id="phos" type="text" name="phos[]" data-format="$ 0,0[.]00" value="8.80" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Fertilizer-Sulphur/Other</th><td>
+              <input id="sulphur" type="text" name="sulphur[]" data-format="$ 0,0[.]00" value="0.00" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Chemical Herbicides</th><td>
+              <input id="herb" type="text" name="herb[]" data-format="$ 0,0[.]00" value="20.13" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Insecticides/Fungicides</th><td>
+              <input id="fung" type="text" name="fung[]" data-format="$ 0,0[.]00" value="0.56" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Seed Treatments/Innoculants</th><td>
+              <input id="seedtreat" type="text" name="seedtreat[]" data-format="$ 0,0[.]00" value="13.00" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Machinery Operating- Fuel</th><td>
+              <input id="fuel" type="text" name="fuel[]" data-format="$ 0,0[.]00" value="19.95" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Machine Operating-Repair</th><td>
+              <input id="repair" type="text" name="repair[]" data-format="$ 0,0[.]00" value="11.76" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Custom Work and Hired Labour</th><td>
+              <input id="hired" type="text" name="hired[]" data-format="$ 0,0[.]00" value="16.25" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Crop Insurance Premium</th><td>
+              <input id="cropins" type="text" name="cropins[]" data-format="$ 0,0[.]00" value="12.10" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Utilities and Misc</th><td>
+              <input id="util" type="text" name="util[]" data-format="$ 0,0[.]00" value="6.04" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Variable Expense Interest</th><td>
+              <input id="varint" type="text" name="varint[]" data-format="$ 0,0[.]00" value="3.22" />
+            </td>
+            </tr>
+
+            <tr>
+              <th>Total Variable Expenses</th><td>
+              <input id="totalvar" type="text" name="totalvar[]" value="" data-format="$ 0,0[.]00" data-formula="($seed+$nitrogen+$phos+$sulphur+$herb+$fung+$seedtreat+$fuel+$repair+$hired+$cropins+$util+$varint)"/>
+            </td>
+            </tr>
+
+            <th><i>Return Per Acre</i></th>
+            <tr>
+              <th>Return Over Variable Expenses</th><td>
+              <input id="returnvar" type="text" name="returnvar[]" value="" data-format="$ 0,0[.]00" data-formula="($estimatedrev-$totalvar)"/>
+            </td>
+            </tr>
+
+            <tr>
+              <th>Total Acres</th><td>
+              <input id="totalacres" type="text" name="totalacres[]" value="140" data-format=" 0,0[.]00"/>
+            </td>
+            </tr>
+
+            <tr>
+              <th>Total Estimated Profit</th><td>
+              <input id="profit" type="text" name="profit[]" value="" data-format="$ 0,0[.]00" data-formula="($returnvar*$totalacres)"/>
+            </td>
+            </tr>
+
+            <th><i>Break Even Yield Per Acre</i></th>
+            <tr>
+              <th>Yield To Cover Variable Expenses</th><td>
+              <input id="breakeven" type="text" name="breakeven[]" value="" data-format=" 0,0[.]00" data-formula="($totalvar) / ($estimatedmarketprice)"/>
+            </td>
+            </tr>
+
+            </tbody>
+
+
+            <tr>
+              <td>
+                <input id="calculate" type="button" value="Calculate" />
+              </td>
+            </tr>
+
+
+
+
+
+
+
+            </tbody>
+          </table>
+
+
+        </form>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>

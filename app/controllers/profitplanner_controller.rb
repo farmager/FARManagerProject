@@ -10,4 +10,16 @@ class ProfitplannerController < ApplicationController
 
   def show
   end
+
+  def canola
+
+  end
+
+  def peas
+
+  end
+
+  def wheat
+
+  end
 end

@@ -5,7 +5,7 @@ Farmagerproject::Application.routes.draw do
   resources :users
   resources :expenses
   resources :equipment
-  resources :maintenances,only: [:new,:edit, :create, :index, :destroy]
+  resources :maintenances
   resources :maps
 
   resources :sessions, only: [:new, :create, :destroy]
@@ -20,6 +20,9 @@ Farmagerproject::Application.routes.draw do
 
   resources :observations
   resources :profitplanner
+  match '/canolaprofitplanner',    to: 'profitplanner#canola',    via: 'get'
+  match '/peaprofitplanner',    to: 'profitplanner#peas',    via: 'get'
+  match '/wheatprofitplanner',    to: 'profitplanner#wheat',    via: 'get'
   resources :croprotation
 
   match '/weather', to: 'weather#index', via:'get'

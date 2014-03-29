@@ -21,7 +21,15 @@
 			<a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
 			<h3>Crop Rotation</h3>
 
+
 		</div>
+
+      <%if current_user.fields.where(year: '2013').blank?%>
+
+          <div class="alert alert-warning" align="center">
+            <p>Please enter your 2013 crops to use this feature!</p>
+          </div>
+      <%end%>
 
 		<div class="page-content inset">
 			<div class="row">
@@ -51,6 +59,7 @@
 						</thead>
 
 						<tbody>
+
 							<% @fields.each do |field| %>
 							<tr>
 								<td><%= field.land_location%></td>
