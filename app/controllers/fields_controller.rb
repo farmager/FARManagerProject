@@ -62,6 +62,7 @@ class FieldsController < ApplicationController
 
   def show
     @field = Field.find(params[:id])
+    @fields = current_user.fields.build
   end
 
   def create

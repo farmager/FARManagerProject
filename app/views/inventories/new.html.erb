@@ -16,7 +16,9 @@
 				<div class="col-md-12">
 <%= bootstrap_form_for(@inventory, style: :horizontal, left: "col-sm-4", right: "col-sm-4") do |f| %>
 <%= f.text_field :name, placeholder: "Enter inventory name.." %>
-<%= f.text_field :capacity, placeholder: "Enter bin capacity.." %>
+                      <%= f.text_field :capacity,label:"Quantity", placeholder: "Enter quantity..." %>
+<%= f.collection_select :bin,current_user.storages.select(:name).uniq, :name, :name, {:include_blank => "Please select storage."}%>
+
 <%= f.collection_select :commodity,current_user.fields.select(:crop_type).uniq, :crop_type, :crop_type, {:include_blank => "Please select commodity."}%>
 <%= f.collection_select :commodity_variety,current_user.fields.select(:variety).uniq, :variety, :variety, {:include_blank => "Please select variety."}%>
 <%= f.collection_select :harvested_field,current_user.fields.select(:land_location).uniq, :land_location, :land_location, {:include_blank => "Please select land location."}%>
@@ -31,8 +33,8 @@
 <br/>
 
 <%= f.text_field :cropyear, label: "Crop Year", placeholder: "Enter year harvested..." %>
-<%= f.text_field :price, placeholder: "Enter price received..." %>
-<%= f.text_field :ticket_no, placeholder: "Enter grain ticket number.." %>
+<%= f.text_field :price, label: "Estimated or Actual Price", placeholder: "Enter price received..." %>
+<%= f.text_field :ticket_no, label: "Ticket Number", placeholder: "Enter grain ticket number.." %>
 <%= f.text_field :moisture_content, placeholder: "Enter moisture content.." %>
 <%= f.text_area :notes, placeholder: "Enter notes..." %>
 

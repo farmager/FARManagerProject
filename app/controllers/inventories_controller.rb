@@ -35,15 +35,15 @@ class InventoriesController < ApplicationController
     @inventory = Inventory.find(params[:id])
   end
 
-  def show
-    @inventory = Inventory.find(params[:id])
-  end
+  #def show
+  #  @inventory = Inventory.find(params[:id])
+  #end
 
   def create
     @inventory = current_user.inventories.build(inventory_params)
     if @inventory.save
       flash[:success] = "Inventory added successfully!"
-      redirect_to @inventory
+      redirect_to inventories_url
     else
       render 'new'
     end

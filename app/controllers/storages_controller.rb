@@ -4,6 +4,7 @@ class StoragesController < ApplicationController
   
   def index
     @storage = current_user.storage.paginate(page: params[:page])
+
   end  
   
   def new
@@ -34,6 +35,7 @@ class StoragesController < ApplicationController
    
   def show
     @storage = Storage.find(params[:id])
+    @inventories = current_user.inventories.all
   end
   
     def create

@@ -1,0 +1,47 @@
+<% provide(:title, 'Edit Storage') %>
+<div id="wrapper">
+
+  <%= render "shared/sidebar"%>
+
+  <!-- Page content -->
+  <div id="page-content-wrapper">
+    <div class="content-header">
+      <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+      <h3>Add Storage Record</h3>
+
+    </div>
+
+    <div class="page-content inset">
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <%= bootstrap_form_for(@storage, style: :horizontal, left: "col-sm-4", right: "col-sm-4",  :html => { :multipart => true }) do |f| %>
+
+
+              <%= f.text_field :name, label: "Bin Name",placeholder: "Enter the storage name..." %>
+
+              <%= f.text_field :capacity, placeholder: "Enter the capacity of the bin...", label: "Storage Capacity(bushels)"%>
+
+              <%= f.text_field :group, placeholder: "Enter the group the storage belongs to...", label: "Group" %>
+
+              <%= f.form_group :rent_or_own, label: { text: "Rent or Own" } do %>
+                  <%= f.radio_button(:rent_or_own, "Rent") %>
+                  <%= f.label(:rent_or_own1, "Rent") %>
+                  <%= f.radio_button(:rent_or_own, "Own") %>
+                  <%= f.label(:rent_or_own2, "Own") %>
+              <% end %>
+
+              <%=f.text_area :notes, placeholder: "Enter any notes... ",label: "Notes"%>
+              <%= f.form_group do %>
+                  <%= f.submit "Edit Storage",class: "btn btn-primary"%>
+              <% end %>
+
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

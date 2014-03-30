@@ -60,11 +60,11 @@
 									<br/>
 									<br/>
 
-									<b>Canola: </b><%= current_user.fields.where(crop_type:'Canola').average(:netyield).round(1) %> bushels/acre
+									<b>Canola: </b><%= current_user.fields.where(crop_type:'Canola').average(:netyield) %> bushels/acre
 									<br/>
-									<b>Field Peas: </b><%= current_user.fields.where(crop_type:'Field Peas').average(:netyield).round(1) %> bushels/acre
+									<b>Field Peas: </b><%= current_user.fields.where(crop_type:'Field Peas').average(:netyield) %> bushels/acre
 									<br/>
-									<b>Wheat- Hard Red Spring: </b><%= current_user.fields.where("crop_type like ?", "%Wheat%").average(:netyield).round(1) %> bushels/acre
+									<b>Wheat- Hard Red Spring: </b><%= current_user.fields.where("crop_type like ?", "%Wheat%").average(:netyield) %> bushels/acre
 									<br/>
 									<b>Flax: </b><% flaxyield=current_user.fields.where(crop_type:'Flax').average(:netyield) %> 
 									<%if !flaxyield.present?%>
