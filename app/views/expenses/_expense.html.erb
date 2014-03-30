@@ -2,9 +2,14 @@
   	<b>Gross Income Totals: </b><%=number_to_currency(expense.update_income)%><br/>
   <b>Expense Totals: </b><%=number_to_currency(expense.update_expenses)%><br/>
  <b>Total Taxable Incomes: </b><%=number_to_currency(expense.update_taxable)%><br/>
- <p class="text-danger">Calculating Tax Owing:  <%=number_to_currency(expense.tax_money_owed)%></p>
+  <%if expense.tax_owed > 0 %>
+      <p class="text-danger"><b>Calculating Tax Owing:</b>  <%=number_to_currency(expense.tax_owed)%></p>
+      <%elsif expense.tax_owed == 0%>
+ <p class="text-danger"><b>No tax owing-below basic exemption amount.</b></p>
+      <%else%>
+      <p class="text-danger"><b>Net LOSS Calculated.</b></p>
 
-  
+  <%end%>
   
   <%= link_to "Edit", edit_expense_path(expense), class:"btn btn-sm btn-default" %>
   <%= link_to "Delete", expense, method: :delete, class:"btn btn-sm btn-default",data: { confirm: "Are you sure you want to delete this tax year?" } %><br/>

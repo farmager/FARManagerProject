@@ -7,7 +7,9 @@ class Expense < ActiveRecord::Base
   before_save :update_income
   before_save :update_expenses
    before_save :update_taxable
-   before_save :tax_money_owed
+   before_save :fed_tax_money_owed
+  before_save :prov_tax_money_owed
+  before_save :tax_owed
   
  after_initialize :initvaluesifzero
 
@@ -60,18 +62,42 @@ update_income-update_expenses
 # 26% on the next $48,363 of taxable income (on the portion of taxable income over $87,907 up to $136,270), +
 # 29% of taxable income over $136,270.
 #loss 
-  def tax_money_owed
-    if update_taxable <= 43953 && update_taxable >= 0
-      update_taxable * 0.15
-    elsif update_taxable >= 43954 && update_taxable <=87907
-     (43953*0.15) + ((update_taxable-43953) * 0.22)
-    elsif update_taxable >= 87908 && update_taxable <=136270
-      (43953*0.15)+ (48363*0.22) + (update_taxable * 0.26)
-    elsif update_taxable >= 136270
-      (43953*0.15)+ (48363*0.22)+ (43954*0.26) + (update_taxable * 0.29)
-    else
-      update_taxable 
+  def fed_tax_money_owed
+    if update_taxable <= 43953 && update_taxable >= 11038
+      ((update_taxable-11038) * 0.15)
+    elsif update_taxable >= 43953.01 && update_taxable <=87907
+      ((update_taxable-43953)*0.22+(4937.25))
+    elsif update_taxable >= 87907.01 && update_taxable <=136270
+      ((update_taxable-87907)*0.26+(14607.13))
+    elsif update_taxable >= 136270.01
+      ((update_taxable-136270)*0.29+(27181.51))
+    elsif update_taxable <= 11038 && update_taxable > 0
+      0
+      else update_taxable < 0
+      update_taxable
     end
+  end
+
+  def prov_tax_money_owed
+    if update_taxable <= 43292 && update_taxable >= 15241
+      ((update_taxable-15241) * 0.11)
+    elsif update_taxable >= 43292.01  && update_taxable <=123692
+      ((update_taxable-43292)*0.13+(3085.11))
+    elsif update_taxable >= 123692.01
+      ((update_taxable-123692)*0.15+(13537.11))
+    elsif update_taxable <= 15241 && update_taxable > 0
+      0
+      else update_taxable < 0
+      update_taxable
+    end
+  end
+
+  def tax_owed
+    if update_taxable >= 0
+    fed_tax_money_owed+prov_tax_money_owed
+    else
+      update_taxable
+      end
   end
  
 

@@ -78,16 +78,35 @@
 					<p class="text-danger"><b>Total Taxable Income: <%= number_to_currency(@expense.update_taxable)%></b></p>
 				
 						
-						<hr>
-						<p class="text-danger"><b>Calculated Tax Owing: <%= number_to_currency(@expense.tax_money_owed)%>
-							<br/><br/>
-							<%if @expense.tax_money_owed < 0 %>
-							A net LOSS has been calculated!
-							<%end%>
-							
-							
-						</b></p>
-						<br/><br/><br/>	
+
+
+                          <%if @expense.tax_owed > 0 %>
+                              <hr>
+                          <p class="text-danger"><b>
+                            You could possibly owe <%= number_to_currency(@expense.tax_owed)%> in taxes: <%= number_to_currency(@expense.fed_tax_money_owed)%> in
+                            federal tax and <%= number_to_currency(@expense.prov_tax_money_owed)%> in provincial tax.</b></p>
+                              <%elsif @expense.tax_owed == 0%>
+                              <hr>
+
+                              <p class="text-danger"><b>
+                                No tax owing-below basic exemption amount.</b></p>
+                        <%end%>
+
+
+                          <hr>
+
+                          <p class="text-primary"><b>
+                          <%if @expense.tax_owed < 0 %>
+                              FARManager detected a net LOSS - please contact a financial expert in the preparation of your taxes!
+                          <%elsif @expense.tax_owed >0%>
+                                FARManager detected a possible amount owing of <%= number_to_currency(@expense.tax_owed)%> - <br/>
+                                please contact a financial expert for ways to lower your tax owing!
+
+
+                          <%end%>
+                          </b></p>
+
+
 						</h4>
 				</div>
 
