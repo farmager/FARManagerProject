@@ -140,23 +140,23 @@
               <div class="col-md-7">
                 <p class="well">
 
-                  <b>Inventory</b>
+                  <b> <%=@current_user.name%> Farm Information:</b>
                   <br/>
-                  <%if @maintenances.blank?%>
+                  <%if @totalfields.blank?%>
                       <br/>
                       <b class="text-success">
-                        <%=@current_user.name%> you have no equipment records, click to ...</b>
-                      <a class="btn btn-sm btn-primary" href="/equipment/" role="button">Add Equipment</a>
+                        <%=@current_user.name%> you have no fields, click to ...</b>
+                      <a class="btn btn-sm btn-primary" href="/fields/" role="button">Add Equipment</a>
 
                   <%else%>
-                      <%@maintenances.each do |m|%>
+
                           <br/>
 
-                          Equipment: <%=m.equipment_maintained%>
-                          <br/>
-                          Service Date: <%=m.next_maintenance_date.strftime("%B %d, %Y")%>
-                          <br/>
-                      <%end%>
+                    <b class="text-success">Current Growing Season Total Acres: <%=@total%> acres </b><br/>
+                      <b class="text-success">Canola Produced (2013): <%=@canola_produced%> acres </b> <br/>
+                      <b class="text-success">Wheat Produced (2013): <%=@wheat_produced%> acres </b><br/>
+                      <b class="text-success">Peas Produced (2013): <%=@peas_produced%> acres </b> <br/>
+
                   <%end%>
 
                 </p>
@@ -309,7 +309,7 @@
         <%= link_to image_tag("wheat.jpg", class:"img-circle pull-right home-featurette-image", alt: "")  %>
 
         <h2 class="home-featurette-heading">See what FARManager can do for you! <span class="text-muted">It'll blow your mind.</span></h2>
-        <p class="lead">"This application is a big asset to my farm- having the ability to see everything within a few clicks of the mouse is great. With so any great features it is hard to pick a favourite. I recommend this service to all farmers!" </p>
+        <p class="lead">"This application is a big asset to my farm- having the ability to see everything within a few clicks of the mouse is great. With so many great features it is hard to pick a favourite. I recommend this service to all farmers!" </p>
         <b>-Cardiff Farms, Eugene and Brenda Cardiff</b>
       </div>
 

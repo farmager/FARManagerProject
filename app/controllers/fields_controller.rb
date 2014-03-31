@@ -26,6 +26,10 @@ class FieldsController < ApplicationController
     @fields = @search.result().page(params[:page])
     @search.build_condition
 
+    @total=Field.where(year:'2013').sum(:seeded_acres)
+    @canola_produced=Field.where("crop_type like ? AND year=2013", "%Canola%").sum(:production)
+    @wheat_produced=Field.where("crop_type like ? AND year=2013", "%Wheat%").sum(:production)
+    @peas_produced=Field.where("crop_type like ? AND year=2013", "%Peas%").sum(:production)
   end
 
   def new
