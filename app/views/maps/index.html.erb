@@ -75,12 +75,13 @@ function createSidebar(json_array){
     bindLiToMarker($li, json.marker);
   });
 };
-
+var mapOptions = { mapTypeId: google.maps.MapTypeId.SATELLITE };
 handler = Gmaps.build('Google');
-handler.buildMap({ internal: {id: 'one_marker'}}, function(){
-	
-	
-  var json_array = [
+handler.buildMap({ provider: mapOptions,internal: {id: 'one_marker'}}, function(){
+
+
+
+    var json_array = [
     { lat: 51.223096, lng: -104.862234, name: 'NW 15-26-21 (Hilly Grandads)', infowindow: "NW 15-26-21" },
     { lat: 51.237568, lng: -104.838998, name: 'NW 23-26-21 (Home Quarter) ', infowindow: "NW 23-26-21" },
     { lat: 51.223096, lng: -104.850759, name: 'NE 15-26-21 (Bushy Quarter) ', infowindow: "NE 15-26-21" },

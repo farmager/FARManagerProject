@@ -2,11 +2,13 @@ class InventoriesController < ApplicationController
 
   before_action :signed_in_user
   def index
-    @search = current_user.inventories.search(search_params)
-    @search.sorts = 'name' if @search.sorts.empty?
-    @inventories = @search.result().page(params[:page])
-    @search.build_condition
+    #@search = current_user.inventories.search(search_params)
+    #@search.sorts = 'name' if @search.sorts.empty?
+    #@inventories = @search.result().page(params[:page])
+    #@search.build_condition
     @storages=current_user.storages.all
+    @inventories=current_user.inventories.all
+
   end
 
   def new
